@@ -1,0 +1,215 @@
+/*--Buttons for evaluate--*/
+.btn_activities{
+	margin: 8px 1%;
+	padding: 0;
+	text-align: left
+}
+.btn_activities figure{
+	display: inline-block;
+	width: 80px;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	border: 0;
+}
+.btn_activities figure:first-child{
+	margin-right: 5px;
+	display: inline-block;
+	position: absolute;
+}
+.btn_activities figure:nth-child(2){
+	display: inline-block;
+	margin-right: 5px;
+	position: relative;
+}
+.btn_activities figure:last-child{
+	display: inline-block;
+	margin-right: 5px;
+}
+.btn_activities figure img{
+	width: 100%;
+	margin: 0;
+}
+.wrong_icon{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url('../img/wrong_icon.png') no-repeat;
+	padding: 0;
+	border: none;
+	position: relative;
+	margin: 0 0 -7px 2px;
+	display: none;
+}
+.good_icon{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url('../img/good_icon.png') no-repeat;
+	padding: 0;
+	border: none;
+	position: relative;
+	margin: 0 0 -7px 2px;
+	display: none;
+}
+/*--Complete activity--*/
+
+
+/*--Select activity--*/
+.select_activity li{
+	cursor: default;
+}
+.select_activity li div{
+	boder: thin solid red;
+	display: inline-block;
+	background: #DDD;
+	position: relative;
+	width: 23px;
+	border-radius: 11px;
+	height: 22px;
+	text-align: center;
+	padding-top: 1px;
+	cursor: pointer;
+}
+.select_activity li div:hover{
+	background: #AAA;
+	color: #FFF
+}
+
+/*--Drag and drop activity--*/
+.box{
+	margin: 0 auto;
+	display: inline-block;
+	padding: 3px 7px 3px 7px;
+	background-color: #DDD;
+	cursor: default;
+	text-align: center;
+	border-radius: 5px;
+}
+.box_img{
+	margin: 0 auto;
+	display: inline-block;
+	padding: 0;
+	overflow: hidden;
+	background-color: #DDD;
+	cursor: default;
+	text-align: center;
+	border-radius: 5px;
+	width: 150px;
+	height: 150px;
+}
+.box_img img{
+	margin: 0;
+	float: left;
+	width: 100%;
+}
+
+/*--Accordtion select activity--*/
+.input_select{
+	cursor: pointer;
+}
+
+/*--Word search--*/
+.rf-tgrid {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 1px;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+.rf-tablestyle {
+    border: 2px solid;
+    border-color: gold;
+    background-color: ghostwhite;
+    cursor: pointer;
+
+}
+
+#rf-searchgamecontainer {
+    float: left;
+    padding-right: 50px; 
+}
+
+#rf-wordcontainer {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    float :left;
+    padding-right: 50px; 
+    cursor: default;
+	margin : 1em 1em 1em 0;
+	
+    border: 2px solid;
+    border-color: gold;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;	
+    
+	cursor: pointer;	
+}
+
+.rf-foundword {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+	text-decoration : line-through;
+	color : lightgray;
+	font-style : italic;
+
+}
+
+#rf-tablegrid .rf-highlight {
+    background: red;
+}
+
+
+#rf-tablegrid .rf-glowing {
+	background: greenyellow;
+        
+}
+
+#rf-tablegrid .rf-selected {
+	background: gold;
+}
+
+.rf-pfalse {
+    color: gray;
+    visibility: hidden; 
+}
+
+/*--Crucigrama--*/
+.crucigrama{
+	width: auto;
+}
+.crucigrama tr td{
+	border: none;
+	background-color: white;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+}
+.box_crucigrama{
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background-color: #F9F9F9;
+	text-transform: uppercase;
+}
+.black_box input{
+	background-color: #000;
+}
+
+/*--Evaluate big content--*/
+.big_content { 
+    resize: none;
+	padding: 8px;
+	text-align: justify;
+	font-family: 'open_sansregular';
+	border: thin solid #DDD;
+	background-color: #FCFCFC;
+	color: #555;
+	margin: 8px;
+}

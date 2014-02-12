@@ -1,0 +1,132 @@
+/*--Responsive--*/
+@media screen and (max-width: 900px){
+	footer ul li{
+		font-size: 13px;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	footer .info_fac .shield_1{
+		width: 53px;
+		height: 53px;
+		margin: -23px 8px 0 8px;
+		background-size: 100%;
+	}
+	footer .info_fac .shield_2{
+		width: 53px;
+		height: 53px;
+		margin-top: -23px;
+		background-size: 100%;
+	}
+}
+
+@media screen and (max-width: 800px){
+
+	/*--Header--*/
+	.course_title h1{
+		font-size: 22px !important;
+		line-height: 23px !important;
+	}
+	.level_unit h1{
+		font-size: 18px !important;
+		line-height: 22px !important;
+	}
+	.lesson_title h1{
+		font-size: 18px !important;
+		line-height: 22px !important;
+	}
+	.main_container header {
+		background: url(../img/back_menu_800.png) no-repeat right top;
+		height: 58px;
+	}
+
+	/*--Layout intro--*/
+	.back_intro{
+		background: url(../img/back_intro_800.png) no-repeat right top !important;
+	}
+
+	footer ul li{
+		font-size: 12px;
+	}
+	footer .info_fac .shield_1{
+		width: 42px;
+		height: 42px;
+		margin: -17px 8px 0 8px;
+		background-size: 100%;
+	}
+	footer .info_fac .shield_2{
+		width: 42px;
+		height: 42px;
+		margin-top: -17px;
+		background-size: 100%;
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	/*--Header--*/
+	.main_container header {
+		background: url(../img/back_menu_768.png) no-repeat right top;
+		height: 58px;
+	}
+
+	/*--Layout intro--*/
+	.back_intro{
+		background: url(../img/back_intro_680.png) no-repeat right top !important;
+	}
+}
+
+@media screen and (max-width: 680px){
+
+	/*--Header--*/
+	.course_title, .level_unit, .lesson_title{
+		padding-top: 5px;
+	}
+	.level_unit{
+		margin-left: -5px !important;
+	}
+	.lesson_title{
+		margin-left: -5px !important;
+	}
+	.course_title h1{
+		font-size: 17px !important;
+		line-height: 19px !important;
+	}
+	.level_unit h1{
+		font-size: 16px !important;
+		line-height: 19px !important;
+	}
+	.lesson_title h1{
+		font-size: 15px !important;
+		line-height: 19px !important;
+	}
+	.main_container header {
+		background: url(../img/back_menu_680.png) no-repeat right top;
+		height: 58px;
+	}
+
+	/*--Layout intro--*/
+	.title_1 h1:first-child{
+		font-size: 31px;
+	}
+	.title_1 h1:last-child{
+		font-size: 31px;
+	}
+	.title_2 h1:first-child{
+		font-size: 28px;
+	}
+	.title_2 h1:last-child{
+		font-size: 28px;
+	}
+	.title_3 .title_1{
+		font-size: 27px;
+		line-height: 0;
+	}
+	.title_3 .title_2{
+		font-size: 23px;
+	}
+
+	.info_fac li:first-child{
+		display: none;
+	}
+
+}

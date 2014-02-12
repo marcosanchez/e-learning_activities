@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+
+  <general>
+
+    <title>
+      <langstring>Pixel Group Net SA</langstring>
+    </title>
+
+    <catalogentry>
+      <catalog>PixelManager</catalog>
+      <entry>
+        <langstring>123461</langstring>
+      </entry>
+    </catalogentry>
+
+    <language>en-US</language>
+
+    <description>
+      <langstring>Este contenido ha sido publicado desde www.pixelmanger.com.co</langstring>
+    </description>
+
+    <keyword>
+      <langstring>SCORM</langstring>
+    </keyword>
+
+    <keyword>
+      <langstring>Demonstrator</langstring>
+    </keyword>
+
+    <keyword>
+      <langstring>Capabilities</langstring>
+    </keyword>
+
+    <keyword>
+      <langstring>Test</langstring>
+    </keyword>
+
+    <keyword>
+      <langstring>Pixel Group Net SA</langstring>
+    </keyword>
+
+    <keyword>
+      <langstring>Pixel Group Net SA</langstring>
+    </keyword>
+
+    <structure>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Atomic</langstring>
+      </value>
+    </structure>
+
+    <aggregationlevel>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">2</langstring>
+      </value>
+    </aggregationlevel>
+
+  </general>
+
+  <lifecycle>
+
+    <version>
+      <langstring>1.0</langstring>
+    </version>
+
+    <status>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Final</langstring>
+      </value>
+    </status>
+
+    <contribute>
+      <role>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Author</langstring>
+        </value>
+      </role>
+      <centity>
+        <vcard>
+          begin: vcard
+          fn: John Toews, Andy Johnson, Ross Teicher
+          org: Academic ADL Co-Lab
+          end: vcard
+        </vcard>
+      </centity>
+      <date>
+        <datetime>2002-08-01</datetime>
+        <description>
+          <langstring>Date Description</langstring>
+        </description>
+      </date>
+    </contribute>
+
+    <contribute>
+      <role>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Graphical Designer</langstring>
+        </value>
+      </role>
+      <centity>
+        <vcard>
+          begin: vcard
+          fn: Ross Teicher
+          org: Academic ADL Co-Lab
+          end: vcard
+        </vcard>
+      </centity>
+      <date>
+        <datetime>2002-08-01</datetime>
+        <description>
+          <langstring>Date Description</langstring>
+        </description>
+      </date>
+    </contribute>
+
+  </lifecycle>
+
+  <metametadata>
+
+    <contribute>
+      <role>
+        <source>
+          <langstring xml:lang="x-none">LOMv1.0</langstring>
+        </source>
+        <value>
+          <langstring xml:lang="x-none">Creator</langstring>
+        </value>
+      </role>
+      <centity>
+        <vcard>
+          begin: vcard
+          fn:Andy Johnson
+          org: Academic ADL Co-Lab
+          end: vcard
+        </vcard>
+      </centity>
+      <date>
+        <datetime>2002-08-28</datetime>
+        <description>
+          <langstring>Date Description</langstring>
+        </description>
+      </date>
+    </contribute>
+
+    <metadatascheme>ADL SCORM 1.2</metadatascheme>
+
+    <language>en-us</language>
+
+  </metametadata>
+
+  <technical>
+
+    <format>text/html</format>
+
+    <format>application/x-shockwave-flash</format>
+
+    <size>40000</size>
+
+    <location>SCORMdemonstrator.html</location>
+
+  </technical>
+
+  <educational>
+
+    <interactivitytype>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Mixed</langstring>
+      </value>
+    </interactivitytype>
+
+    <learningresourcetype>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Exercise</langstring>
+      </value>
+    </learningresourcetype>
+
+    <learningresourcetype>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Simulation</langstring>
+      </value>
+    </learningresourcetype>
+
+    <interactivitylevel>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">high</langstring>
+      </value>
+    </interactivitylevel>
+
+    <semanticdensity>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">medium</langstring>
+      </value>
+    </semanticdensity>
+
+    <intendedenduserrole>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Learner</langstring>
+      </value>
+    </intendedenduserrole>
+
+    <context>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Vocational Training</langstring>
+      </value>
+    </context>
+
+    <typicalagerange>
+      <langstring>15 - 110</langstring>
+    </typicalagerange>
+
+    <difficulty>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">medium</langstring>
+      </value>
+    </difficulty>
+
+    <language>en-us</language>
+
+  </educational>
+
+  <rights>
+
+    <cost>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">no</langstring>
+      </value>
+    </cost>
+
+    <copyrightandotherrestrictions>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">yes</langstring>
+      </value>
+    </copyrightandotherrestrictions>
+
+  </rights>
+
+  <classification>
+
+    <purpose>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Educational Objective</langstring>
+      </value>
+    </purpose>
+
+    <description>
+      <langstring>This content shows how SCORM standards can be implemented using Flash MX</langstring>
+    </description>
+
+    <keyword>
+      <langstring>Flash MX SCORM Tester</langstring>
+    </keyword>
+
+  </classification>
+
+</lom>
