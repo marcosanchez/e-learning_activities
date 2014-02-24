@@ -34,7 +34,6 @@ var answers_3_1 = {
     'question_3_1_10': '2'
 };
 
-console.log(answers_3_1['question_3_1_1'])
 for (qu in questions_3_1) {
     questions_3_1[qu]['answer'] = 0;
 }
@@ -101,4 +100,3 @@ $("#answers_3_1").click(function () {
     }
 });
 /*--Page 3 activity 1--*/
-

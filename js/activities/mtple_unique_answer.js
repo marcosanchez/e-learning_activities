@@ -7,23 +7,23 @@ var answered_5_1 = false;
 
 // Introduce questions
 var questions_5_1 = {
-    'question_5_1': {},
-    'question_5_2': {},
-    'question_5_3': {}
+    'question_5_1_1': {},
+    'question_5_1_2': {},
+    'question_5_1_3': {}
 };
 
 // Introduce answers
 var answers_5_1 = {
-    'question_5_1': 'option_1',
-    'question_5_2': 'option_2',
-    'question_5_3': 'option_4'
+    'question_5_1_1': 'option_1',
+    'question_5_1_2': 'option_2',
+    'question_5_1_3': 'option_4'
 };
 
 for (qu in questions_5_1) {
     questions_5_1[qu]['answer'] = false;
 }
 
-$('.word_list').on('click', 'input', function() {
+$('.questions_5_1').on('click', 'input', function() {
     answered_5_1 = true;
     var selected_option = $(this).data('option');
     var question = questions_5_1[$(this).closest('ul').data('question')];
@@ -33,7 +33,7 @@ $('.word_list').on('click', 'input', function() {
 
 
 $("#check_answers_5_1").click(function () {
-    $('.word_list ul').each(function( key, element) {
+    $('.questions_5_1 ul').each(function( key, element) {
         var correct_answer = answers_5_1[$(element).data('question')];
         var selected_answer = questions_5_1[$(element).data('question')]['answer'];
 
@@ -65,7 +65,7 @@ $("#reset_answers_5_1").click(function () {
     }
 
     $('.good_icon, .wrong_icon').fadeOut("normal");
-    $('.word_list input').each(function( key, element) {
+    $('.questions_5_1 input').each(function( key, element) {
         $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
     });
 
@@ -77,7 +77,7 @@ $("#reset_answers_5_1").click(function () {
 $("#answers_5_1").click(function () {
     $('.good_icon, .wrong_icon').fadeOut("normal");
 
-    $('.word_list input').each(function( key, element) {
+    $('.questions_5_1 input').each(function( key, element) {
         $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
         $(element).prop("checked", false);
     });
@@ -87,7 +87,7 @@ $("#answers_5_1").click(function () {
         var user_answer = questions_5_1[question]['answer'];
         
         if (user_answer) {
-            $('.word_list').find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+            $('.questions_5_1').find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
         }
     }
 });

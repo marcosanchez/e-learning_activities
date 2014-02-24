@@ -7,25 +7,25 @@ var answered_7_1 = false;
 
 // Introduce questions
 var questions_7_1 = {
-    'question_7_1' : {},
-    'question_7_2' : {},
-    'question_7_3' : {},
-    'question_7_4' : {}
+    'question_7_1_1' : {},
+    'question_7_1_2' : {},
+    'question_7_1_3' : {},
+    'question_7_1_4' : {}
 };
 
 // Introduce answers
 var answers_7_1 = {
-    'question_7_1': 'option_1',
-    'question_7_2': 'option_2',
-    'question_7_3': 'option_1',
-    'question_7_4': 'option_1'
+    'question_7_1_1': 'option_1',
+    'question_7_1_2': 'option_2',
+    'question_7_1_3': 'option_1',
+    'question_7_1_4': 'option_1'
 };
 
 for (qu in questions_7_1) {
     questions_7_1[qu]['answer'] = false;
 }
 
-$(".word_list ").on('click', 'input', function () {
+$(".questions_7_1 ").on('click', 'input', function () {
     answered_7_1 = true;
     var selected_option = $(this).data('option');
     var question = questions_7_1[$(this).closest('li').data('question')];
@@ -35,7 +35,7 @@ $(".word_list ").on('click', 'input', function () {
 
 
 $("#check_answers_7_1").click(function () {
-    $('.word_list li').each(function( key, element) {
+    $('.questions_7_1 li').each(function( key, element) {
         var correct_answer = answers_7_1[$(element).data('question')];
         var selected_answer = questions_7_1[$(element).data('question')]['answer']; 
         if (selected_answer) {
@@ -63,7 +63,7 @@ $("#reset_answers_7_1").click(function () {
         questions_7_1[qu]['answer'] = false;
     }
     $('.good_icon, .wrong_icon').fadeOut("normal");
-    $('.word_list input').each(function( key, element) {
+    $('.questions_7_1 input').each(function( key, element) {
         $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
     });
 
@@ -76,7 +76,7 @@ $("#reset_answers_7_1").click(function () {
 $("#answers_7_1").click(function () {
     $('.good_icon, .wrong_icon').fadeOut("normal");
 
-    $('.word_list input').each(function( key, element) {
+    $('.questions_7_1 input').each(function( key, element) {
         $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
         $(element).prop("checked", false);
     });
@@ -86,7 +86,7 @@ $("#answers_7_1").click(function () {
         var user_answer = questions_7_1[question]['answer'];
         
         if (user_answer) {
-            $('.word_list').find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+            $('.questions_7_1').find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
         }
     }
 });

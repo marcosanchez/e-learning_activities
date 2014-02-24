@@ -13,10 +13,6 @@ $(".box_img").each(function(index) {
 $(".box").css('width',Math.max.apply(Math,array_width));
 $(".box").css('height',Math.max.apply(Math,array_height));
 
-$('.answer_options .answer_par').each(function( key, element) {
-    $(element).draggable();
-});
-
 $("body").droppable({
     drop: function(event, ui) {
         $(ui.draggable).css("left",0);
@@ -29,37 +25,41 @@ $('#answers_8_1').hide();
 $("#reset_answers_8_1").hide();
 $("#check_answers_8_1").css('position','relative');
 
+$('.answer_options_8_1 .answer_par').each(function( key, element) {
+    $(element).draggable();
+});
+
 var answered_8_1 = false;
 
 // Introduce questions
 var questions_8_1 = {
-    'question_8_1' : {},
-    'question_8_2' : {},
-    'question_8_3' : {},
-    'question_8_4' : {},
-    'question_8_5' : {},
-    'question_8_6' : {},
-    'question_8_7' : {}
+    'question_8_1_1' : {},
+    'question_8_1_2' : {},
+    'question_8_1_3' : {},
+    'question_8_1_4' : {},
+    'question_8_1_5' : {},
+    'question_8_1_6' : {},
+    'question_8_1_7' : {}
 };
 
 // Introduce answers
 var answers_8_1 = {
-    'question_8_1': '7',
-    'question_8_2': '2',
-    'question_8_3': '3',
-    'question_8_4': '4',
-    'question_8_5': '5',
-    'question_8_6': '6',
-    'question_8_7': '1'
+    'question_8_1_1': '7',
+    'question_8_1_2': '2',
+    'question_8_1_3': '3',
+    'question_8_1_4': '4',
+    'question_8_1_5': '5',
+    'question_8_1_6': '6',
+    'question_8_1_7': '1'
 };
 
 for (qu in questions_8_1) {
     questions_8_1[qu]['answer'] = 0;
 }
 
-$('.answers_place .box_img').each(function( key, element) {
+$('.answers_place_8_1 .box_img').each(function( key, element) {
     $(element).droppable({
-        accept: ".answer_options .answer_par",
+        accept: ".answer_options_8_1 .answer_par",
         drop: function(event, ui) {
             $(this).css("background-color","#FFC742");
             $(this).css("color","#333");
@@ -82,7 +82,7 @@ $('.answers_place .box_img').each(function( key, element) {
 });
 
 $("#check_answers_8_1").click(function () {
-    $('.answers_place .box_img').each(function( key, element) {
+    $('.answers_place_8_1 .box_img').each(function( key, element) {
         var correct_answer = answers_8_1[$(element).data('question')];
         var selected_answer = questions_8_1[$(element).data('question')]['answer'];
 
@@ -102,7 +102,7 @@ $("#check_answers_8_1").click(function () {
         $('#check_answers_8_1').css('display', 'none');
         $("#reset_answers_8_1").fadeIn();
 
-        $('.answer_options .answer_par').each(function( key, element) {
+        $('.answer_options_8_1 .answer_par').each(function( key, element) {
             $(element).draggable("disable");
         });
     }
@@ -113,14 +113,14 @@ $("#reset_answers_8_1").click(function () {
     for (qu in questions_8_1) {
         questions_8_1[qu]['answer'] = 0;
     }
-    $('.answers_place').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_8_1').find('.good_icon, .wrong_icon').fadeOut("normal");
 
-    $('.answer_options .answer_par').each(function( key, element) {
+    $('.answer_options_8_1 .answer_par').each(function( key, element) {
         $(element).css("visibility","visible");
         $(element).draggable("enable");
     });
 
-    $('.answers_place .box_img').each(function( key, element) {
+    $('.answers_place_8_1 .box_img').each(function( key, element) {
         $(element).css("background-color","#DDD");
         $(element).html("&nbsp;");
         $(element).css("border","none");
@@ -136,13 +136,13 @@ $("#answers_8_1").click(function () {
     for (question in questions_8_1) {
         var correct_answer = answers_8_1[question];
         var user_answer = questions_8_1[question]['answer'];
-        var answer_img = $('.answer_options').find("[data-option='" + correct_answer + "']").html();
+        var answer_img = $('.answer_options_8_1').find("[data-option='" + correct_answer + "']").html();
 
         if (user_answer) {
-            $('.answers_place').find("[data-question='" + question + "']").css("border","3px solid #00ca5c").html(answer_img);
+            $('.answers_place_8_1').find("[data-question='" + question + "']").css("border","3px solid #00ca5c").html(answer_img);
         }
     }
 
-    $('.answers_place').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_8_1').find('.good_icon, .wrong_icon').fadeOut("normal");
 });
 /*--Page 8 activity 1--*/

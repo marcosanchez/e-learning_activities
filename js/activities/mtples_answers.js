@@ -7,28 +7,28 @@ var answered_6_1 = false;
 
 // Introduce questions
 var questions_6_1 = {
-    'question_6_1' : {},
-    'question_6_2' : {},
-    'question_6_3' : {}
+    'question_6_1_1' : {},
+    'question_6_1_2' : {},
+    'question_6_1_3' : {}
 };
 
 // Introduce answers
 var answers_6_1 = {
-    'question_6_1': {'option_1': true, 'option_2': false, 'option_3': true, 'option_4': true, 'option_5': true},
-    'question_6_2': {'option_1': false, 'option_2': false, 'option_3': true, 'option_4': true},
-    'question_6_3': {'option_1': true, 'option_2': false , 'option_3': true, 'option_4':true},
+    'question_6_1_1': {'option_1': true, 'option_2': false, 'option_3': true, 'option_4': true, 'option_5': true},
+    'question_6_1_2': {'option_1': false, 'option_2': false, 'option_3': true, 'option_4': true},
+    'question_6_1_3': {'option_1': true, 'option_2': false , 'option_3': true, 'option_4':true},
 };
 
 for (qu in questions_6_1) {
     questions_6_1[qu]['answer'] = false;
 }
 
-$(".word_list ").on('click', 'input', function () {
+$(".questions_6_1").on('click', 'input', function () {
     answered_6_1 = true;
 });
 
 $("#check_answers_6_1").click(function () {
-    $('.word_list li.question_text').each(function( key, element) {
+    $('.questions_6_1 li.question_text').each(function( key, element) {
         var qstion_id = $(this).closest('li').data('question');
         // Introducing user answers data in check button function.
 
@@ -104,7 +104,7 @@ $("#reset_answers_6_1").click(function () {
         questions_6_1[qu]['answer'] = false;
     }
     $('.good_icon, .wrong_icon').fadeOut("normal");
-    $('.word_list input').each(function( key, element) {
+    $('.questions_6_1 input').each(function( key, element) {
         $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
     });
     $('#answers_6_1').hide();
@@ -116,7 +116,7 @@ $("#answers_6_1").click(function () {
 
     $('.good_icon, .wrong_icon').fadeOut("normal");
 
-    $('.word_list input').each(function( key, element) {
+    $('.questions_6_1 input').each(function( key, element) {
         $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
         $(element).prop("checked", false);
     });
@@ -135,7 +135,7 @@ $("#answers_6_1").click(function () {
         if (answered_question) {
             $.each(correct_answer, function(key, value) {
                 if (value === true) {
-                $('.word_list').find("[data-question='" + question + "']").find("[data-option='" + key + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+                $('.questions_6_1').find("[data-question='" + question + "']").find("[data-option='" + key + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
                     
                 }
             });

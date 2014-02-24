@@ -15,10 +15,6 @@ $(".box").each(function(index) {
 $(".box").css('width',Math.max.apply(Math,array_width));
 $(".box").css('height',Math.max.apply(Math,array_height));
 
-$('.answer_options .answer_par').each(function( key, element) {
-    $(element).draggable();
-});
-
 $("body").droppable({
     drop: function(event, ui) {
         $(ui.draggable).css("left",0);
@@ -26,42 +22,46 @@ $("body").droppable({
     }
 });
 
-/*--Page 1 activity 4--*/
+/*--Page 4 activity 1--*/
 $('#answers_4_1').hide();
 $("#reset_answers_4_1").hide();
 $("#check_answers_4_1").css('position','relative');
+
+$('.answer_options_4_1 .answer_par').each(function( key, element) {
+    $(element).draggable();
+});
 
 var answered_4_1 = false;
 
 // Introduce questions
 var questions_4_1 = {
-    'question_4_1' : {},
-    'question_4_2' : {},
-    'question_4_3' : {},
-    'question_4_4' : {},
-    'question_4_5' : {},
-    'question_4_6' : {},
-    'question_4_7' : {}
+    'question_4_1_1' : {},
+    'question_4_1_2' : {},
+    'question_4_1_3' : {},
+    'question_4_1_4' : {},
+    'question_4_1_5' : {},
+    'question_4_1_6' : {},
+    'question_4_1_7' : {}
 };
 
 // Introduce answers
 var answers_4_1 = {
-    'question_4_1': '2',
-    'question_4_2': '1',
-    'question_4_3': '3',
-    'question_4_4': '4',
-    'question_4_5': '5',
-    'question_4_6': '6',
-    'question_4_7': '7'
+    'question_4_1_1': '2',
+    'question_4_1_2': '1',
+    'question_4_1_3': '3',
+    'question_4_1_4': '4',
+    'question_4_1_5': '5',
+    'question_4_1_6': '6',
+    'question_4_1_7': '7'
 };
 
 for (qu in questions_4_1) {
     questions_4_1[qu]['answer'] = 0;
 }
 
-$('.answers_place .box').each(function( key, element) {
+$('.answers_place_4_1 .box').each(function( key, element) {
     $(element).droppable({
-        accept: ".answer_options .answer_par",
+        accept: ".answer_options_4_1 .answer_par",
         drop: function(event, ui) {
             $(this).css("background-color","#FFC742");
             $(this).css("color","#333");
@@ -84,7 +84,7 @@ $('.answers_place .box').each(function( key, element) {
 });
 
 $("#check_answers_4_1").click(function () {
-    $('.answers_place .box').each(function( key, element) {
+    $('.answers_place_4_1 .box').each(function( key, element) {
         var correct_answer = answers_4_1[$(element).data('question')];
         var selected_answer = questions_4_1[$(element).data('question')]['answer'];
 
@@ -104,7 +104,7 @@ $("#check_answers_4_1").click(function () {
         $('#check_answers_4_1').css('display', 'none');
         $("#reset_answers_4_1").fadeIn();
 
-        $('.answer_options .answer_par').each(function( key, element) {
+        $('.answer_options_4_1 .answer_par').each(function( key, element) {
             $(element).draggable("disable");
         });
     }
@@ -115,14 +115,14 @@ $("#reset_answers_4_1").click(function () {
     for (qu in questions_4_1) {
         questions_4_1[qu]['answer'] = 0;
     }
-    $('.answers_place').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_4_1').find('.good_icon, .wrong_icon').fadeOut("normal");
 
-    $('.answer_options .answer_par').each(function( key, element) {
+    $('.answer_options_4_1 .answer_par').each(function( key, element) {
         $(element).css("visibility","visible");
         $(element).draggable("enable");
     });
 
-    $('.answers_place .box').each(function( key, element) {
+    $('.answers_place_4_1 .box').each(function( key, element) {
         $(element).css("background-color","#DDD");
         $(element).html("&nbsp;");
         $(element).droppable("enable");
@@ -137,13 +137,13 @@ $("#answers_4_1").click(function () {
     for (question in questions_4_1) {
         var correct_answer = answers_4_1[question];
         var user_answer = questions_4_1[question]['answer'];
-        var answer_text = $('.answer_options').find("[data-option='" + correct_answer + "']").text();
+        var answer_text = $('.answer_options_4_1').find("[data-option='" + correct_answer + "']").text();
 
         if (user_answer) {
-            $('.answers_place').find("[data-question='" + question + "']").css({"background-color":"#00B050","color":"#FFF"}).html(answer_text);
+            $('.answers_place_4_1').find("[data-question='" + question + "']").css({"background-color":"#00B050","color":"#FFF"}).html(answer_text);
         }
     }
 
-    $('.answers_place').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_4_1').find('.good_icon, .wrong_icon').fadeOut("normal");
 });
-/*--Page 1 activity 4--*/
+/*--Page 4 activity 1--*/
