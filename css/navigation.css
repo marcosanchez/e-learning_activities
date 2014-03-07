@@ -81,7 +81,7 @@
 }
 .container nav .general_nav{
 	margin: 4px 0 0 0;
-	width: 115px;
+	width: 35px;
 	padding: 0;
 	position: absolute;
 	right: 0;
@@ -103,10 +103,10 @@
 	width: 255px;
 	z-index: 1;
 	border-radius: 5px;
-    right: 82px;
+    right: 28px;
     margin: 0;
     position: absolute;
-    top: 34px;
+    top: 32px;
     background: #119BAA;
     -moz-transition: opacity .25s ease .1s;
     -webkit-transition: opacity .25s ease .1s;
