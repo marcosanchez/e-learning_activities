@@ -213,3 +213,97 @@
 	color: #555;
 	margin: 8px;
 }
+
+/*--Concéntrese--*/
+#check_answers_13_1{
+	position:absolute;
+	height: 468px;
+	width: 100%;
+	text-align: left;
+	z-index: 1000;
+	border-radius: 5px;
+	display: none;
+}
+#check_answers_13_1 #bien, #check_answers_13_1 #mal{
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	margin-top: -50px;
+	margin-left: -50px;
+	display: none;
+	background: none;
+	border: none;
+}
+#check_answers_13_1 #bien img, #check_answers_13_1 #mal img{
+	width: 100%;
+}
+.concentrese tr td{
+	padding: 0;
+	border: none;
+	margin: 0;
+}
+.concentrese tr td div{
+	border-radius: 5px;
+}
+.concentrese tr td:first-child div{
+	margin-left: 0;
+}
+.concentrese tr td:last-child div{
+	margin-right: 0;
+}
+.concentrese tr td{
+	padding: 0;
+	border: none;
+	margin: 0;
+}
+.concentrese .card-container {
+	position: relative;
+	width:139px;
+	height:148px;
+	margin: 6px;
+}
+.concentrese .card {
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	width: 100%;
+	cursor: pointer;
+}
+.concentrese .card .side {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background: #ffaf4b;
+	background: -moz-radial-gradient(center, ellipse cover,  #ffaf4b 0%, #ff920a 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a));
+	background: -webkit-radial-gradient(center, ellipse cover,  #ffaf4b 0%,#ff920a 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #ffaf4b 0%,#ff920a 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #ffaf4b 0%,#ff920a 100%);
+	background: radial-gradient(ellipse at center,  #ffaf4b 0%,#ff920a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=1 );
+
+}
+.concentrese .card .back {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	vertical-align: middle;
+	padding-top: 10px;
+	text-align: center;
+	height: 137px;
+	font-weight: bold;
+	color: #FFF;
+	background: #FFF;
+	border: thin solid #f7931e;
+	color: #555;
+}

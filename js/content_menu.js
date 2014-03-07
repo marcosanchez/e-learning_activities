@@ -12,4 +12,5 @@ var content_menu =
     '<li><a href="p10.html" target="_self">Word search</a></li>' +
     '<li><a href="p11.html" target="_self">Crucigrama</a></li>' +
     '<li><a href="p12.html" target="_self">Evaluate big content</a></li>' +
+    '<li><a href="p13.html" target="_self">Concéntrese</a></li>' +
 '</ul>';
