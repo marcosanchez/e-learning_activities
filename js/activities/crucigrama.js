@@ -48,7 +48,7 @@ for (var i = 1; i <= 12; i++) {
         "font-size":8,
         "position":"absolute",
         "margin-left":1,
-        "margin-top":-2
+        "margin-top":1
     });
 }
 
