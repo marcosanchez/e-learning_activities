@@ -166,6 +166,11 @@ table{
 	text-align: justify;
 	padding: 0;
 }
+.normal_list li {
+	list-style: disc;
+	color: #00A7AF;
+	list-style-image: none;
+}
 .word_list li, .number_list li{
 	margin: 3px 0 10px 2.3%;
 	list-style: none;
