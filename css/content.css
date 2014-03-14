@@ -95,7 +95,7 @@ table{
 	float: left;
 	width: 48.23%;
 }
-.table12{
+.table12c{
 	width: 48.23%;
 	margin: 10px auto;
 }
@@ -115,7 +115,7 @@ table{
 	width: 65%;
 	margin: 10px auto;
 }
-table tr th{
+.table1 tr th, .table12 tr th, .table12c tr th, .table13 tr th, .table13c tr th, .table23 tr th, .table23c tr th{
 	background-color: #00A7AF;
 	font-family: 'Arial';
 	text-align: center;
@@ -124,7 +124,7 @@ table tr th{
 	padding: 5px 8px;
 	width: 0;
 }
-table tr td{
+.table1 tr td, .table12 tr td, .table12c tr td, .table13 tr td, .table13c tr td, .table23 tr td, .table23c tr td{
 	border: thin solid #DDD;
 	font-family: 'open_sansregular';
 	padding: 5px 8px;
