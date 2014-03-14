@@ -38,6 +38,16 @@
 	border-right: 3px solid #FFF;
 	margin: -3px -3px 0 0;
 }
+.main_container header h1{
+	width: 100%;
+	color: #FFF;
+	margin: 1.8% auto;
+	cursor: pointer;
+	text-align: center;
+	font-family: 'quicksanditalic';
+	font-weight: normal;
+	font-size: 34px;
+}
 .main_container header .btn_close{
 	width: 23px;
 	height: 23px;
@@ -321,7 +331,7 @@ footer .creditos, footer .req_tecnicos, footer .creditos_intro, footer .req_tecn
 	position: relative;
 	text-align: center;
 	width: 100%;
-	margin-top: 105px;
+	margin-top: 28.6%;
 }
 .title_3 .title_1{
 	font-family: 'quicksanditalic';
