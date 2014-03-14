@@ -19,7 +19,6 @@
 
 /*--Header--*/
 .main_container header {
-	background: url(../img/back_menu.png) no-repeat right top;
 	width: 100%;
 	vertical-align: top;
 	right: 0;
@@ -40,7 +39,6 @@
 	margin: -3px -3px 0 0;
 }
 .main_container header .btn_close{
-	background-image: url("../img/btn_close.png");
 	width: 23px;
 	height: 23px;
 	position: absolute;
