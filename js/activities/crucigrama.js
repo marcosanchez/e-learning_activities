@@ -261,9 +261,13 @@ $("#check_answers_11_1").click(function () {
 
     if(string_word_1.length > 1 || string_word_2.length > 1 || string_word_3.length > 2 || string_word_4.length > 0 || string_word_5.length > 0 || string_word_6.length > 1 || string_word_7.length > 0 || string_word_8.length > 0 || string_word_9.length > 1 || string_word_10.length > 1 || string_word_11.length > 0 || string_word_12.length > 0){
         $('#answers_11_1').fadeIn();
+        $("#reset_answers_11_1").css({
+            'position':'relative',
+            'display':'inline-block'
+        });
+        $("#reset_answers_11_1").fadeIn();
         if(string_word_1 == "savings account" && string_word_2 == "checking account" && string_word_3 == "close an account" && string_word_4 == "deposit" && string_word_5 == "withdrawal" && string_word_6 == "debit card" && string_word_7 == "signature" && string_word_8 == "teller" && string_word_9 == "credit card" && string_word_10 == "right away" && string_word_11 == "cash" && string_word_12 == "passport"){
             $('#check_answers_11_1').css('display', 'none');
-            $("#reset_answers_11_1").fadeIn();
         }
     }
 
