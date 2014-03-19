@@ -64,12 +64,13 @@
 	display: inline-block;
 	background: #DDD;
 	position: relative;
-	width: 23px;
+	min-width: 7px;
 	border-radius: 11px;
-	height: 22px;
+	min-height: 21px;
 	text-align: center;
 	padding-top: 1px;
 	cursor: pointer;
+	padding: 1px 8px;
 }
 .select_activity li div:hover{
 	background: #AAA;

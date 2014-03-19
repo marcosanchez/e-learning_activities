@@ -368,3 +368,97 @@ $("#answers_2_4").click(function () {
 });
 /*--Page 2 activity 4--*/
 
+/*--Page 2 activity 5--*/
+$('#answers_2_5').hide();
+$("#reset_answers_2_5").hide();
+$("#check_answers_2_5").css('position','relative');
+
+// Introduce questions
+var answered_2_5 = false;
+var questions_2_5 = {
+    'question_2_5_1' : {},
+    'question_2_5_2' : {},
+    'question_2_5_3' : {},
+    'question_2_5_4' : {},
+    'question_2_5_5' : {},
+    'question_2_5_6' : {},
+    'question_2_5_7' : {},
+    'question_2_5_8' : {}
+};
+
+// Introduce answers
+var answers_2_5 = {
+    'question_2_5_1': ["father's", "father´s", "father"],
+    'question_2_5_2': ["sisters", "option_1", "option_2"],
+    'question_2_5_3': ["husband", "option_1", "option_2"],
+    'question_2_5_4': ["wife", "option_2"],
+    'question_2_5_5': ["children", "option_2"],
+    'question_2_5_6': ["husband", "option_2"],
+    'question_2_5_7': ["husband", "option_2"],
+    'question_2_5_8': ["husband", "option_2"]
+};
+
+for (qu in questions_2_5) {
+    questions_2_5[qu]['answer'] = '';
+}
+
+$('.questions_2_5 input').on('change', function () {
+    answered_2_5 = true;
+});
+
+$("#check_answers_2_5").click(function () {
+    $('.questions_2_5 input').each(function( key, element) {
+        var correct_answer = answers_2_5[$(element).data('question')];
+        var user_answer = $(element).val();
+
+        questions_2_5[$(element).data('question')]['answer'] = user_answer;
+
+        if(user_answer.length > 0) {
+            if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.wrong_icon').css('display','none');
+            } else {
+                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+            }
+        }
+    });
+
+   if(answered_2_5 === true){
+        $('#answers_2_5').fadeIn();
+        $('#check_answers_2_5').css('display', 'none');
+        $("#reset_answers_2_5").fadeIn();
+   }
+});
+
+
+$('#reset_answers_2_5').click(function () {
+    answered_2_5 = false;
+    for (qu in questions_2_5) {
+        questions_2_5[qu]['answer'] = false;
+    }
+    $('.questions_2_5').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_5 input').each(function( key, element) {
+        $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
+    });
+
+    $('#answers_2_5').hide();
+    $('#check_answers_2_5').fadeIn();
+    $(this).hide();
+});
+
+$("#answers_2_5").click(function () {
+    $('.questions_2_5').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_5 input').val('').css({'color':'#000','font-family':'open_sansregular'});
+
+    for (question in questions_2_5) {
+        var correct_answer = answers_2_5[question][0];
+        var user_answer = questions_2_5[question]['answer'];
+
+        if (user_answer.length > 0) {
+            $('.questions_2_5').find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+        }
+    }
+});
+/*--Page 2 activity 5--*/
+
