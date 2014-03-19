@@ -9,8 +9,7 @@ var content_menu =
     '<li><a href="p07.html" target="_self">False and True</a></li>' +
     '<li><a href="p08.html" target="_self">Drag and drop images</a></li>' +
     '<li><a href="p09.html" target="_self">Accordion select</a></li>' +
-    '<li><a href="p10.html" target="_self">Word search</a></li>' +
-    '<li><a href="p11.html" target="_self">Crucigrama</a></li>' +
-    '<li><a href="p12.html" target="_self">Evaluate big content</a></li>' +
-    '<li><a href="p13.html" target="_self">Concéntrese</a></li>' +
+    '<li><a href="p10.html" target="_self">Crossword</a></li>' +
+    '<li><a href="p11.html" target="_self">Evaluate big content</a></li>' +
+    '<li><a href="p12.html" target="_self">Concentrate</a></li>' +
 '</ul>';
