@@ -27,7 +27,7 @@
 .container nav:first-child .local_nav li:nth-child(2){
 	font-family: 'Arial';
 	color: #BBB;
-	padding-top: 8px;
+	padding-top: 5px;
 	width: 35px;
 	height: 24px;
 	font-size: 14px;
@@ -48,7 +48,7 @@
 .container nav:last-child .local_nav li:nth-child(2){
 	font-family: 'Arial';
 	color: #BBB;
-	padding-top: 8px;
+	padding-top: 5px;
 	width: 35px;
 	height: 24px;
 	font-size: 14px;
@@ -59,12 +59,15 @@
 	float: inherit;
 	width: 33px;
 	height: 33px;
-	background-image: url("../img/btn_prev.png");
 	margin: 0;
 	display: inline-block;
 }
-.btn_prev:hover{
-	background-image: url("../img/btn_prev_over.png");
+.btn_prev i{
+	color: #CCC;
+	font-size: 28px;
+}
+.btn_prev:hover i{
+	color: #888;
 }
 .btn_next{
 	border: inherit;
@@ -72,38 +75,43 @@
 	float: inherit;
 	width: 33px;
 	height: 33px;
-	background-image: url("../img/btn_next.png");
 	margin: 0;
 	display: inline-block;
 }
-.btn_next:hover{
-	background-image: url("../img/btn_next_over.png");
+.btn_next i{
+	color: #CCC;
+	font-size: 28px;
+}
+.btn_next:hover i{
+	color: #888;
 }
 .container nav .general_nav{
-	margin: 4px 0 0 0;
+	margin: 6px 0 0 0;
 	width: 35px;
 	padding: 0;
 	position: absolute;
 	right: 0;
 }
 .btn_content{
-	width: 42px;
+	width: 80px;
 	height: 35px;
-	background: url("../img/btn_content.png") no-repeat right top;
 	cursor: pointer;
 	display: block;
 	outline: none;
 	float: right;
 	position: relative;
+	text-align: right;
+	padding-right: 8px;
 }
-.btn_content:hover{
-	background: url("../img/btn_content_over.png") no-repeat right top;
+.btn_content i{
+	font-size: 28px;
+	color: #555;
 }
 .general_nav li:first-child ul{
 	width: 255px;
 	z-index: 1;
 	border-radius: 5px;
-    right: 28px;
+    right: 10px;
     margin: 0;
     position: absolute;
     top: 32px;

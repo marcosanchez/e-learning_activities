@@ -252,7 +252,7 @@ $('.notebook_content').colorbox({
 
 /*--Show and hide left and right arrow--*/
 if(number_page == total_pages){
-    $('.btn_next').css('background',"url('../img/btn_next_off.png')");
+    $('.btn_next i').css('color','#DDD');
     $('.btn_next').css('cursor','default');
 }
 

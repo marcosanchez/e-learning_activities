@@ -231,15 +231,8 @@ footer .creditos, footer .req_tecnicos, footer .creditos_intro, footer .req_tecn
 	min-height: 680px;
 	margin: 2% auto 12% auto;
 	border-radius: 15px;
-	border: 1px solid #00a7af;
-	background: #00a7af;
-	background: -moz-linear-gradient(left,  #00a7af 0%, #149daa 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#00a7af), color-stop(100%,#149daa));
-	background: -webkit-linear-gradient(left,  #00a7af 0%,#149daa 100%);
-	background: -o-linear-gradient(left,  #00a7af 0%,#149daa 100%);
-	background: -ms-linear-gradient(left,  #00a7af 0%,#149daa 100%);
-	background: linear-gradient(to right,  #00a7af 0%,#149daa 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a7af', endColorstr='#149daa',GradientType=1 );
+	border: none;
+	background: #00B3B8;
 }
 .main_container_intro .back_intro{
 	background: url(../img/back_intro.png) no-repeat right top;
@@ -313,7 +306,7 @@ footer .creditos, footer .req_tecnicos, footer .creditos_intro, footer .req_tecn
 .title_3{
 	color: #FFF;
 	position: absolute;
-	top: 41%;
+	top: 39%;
 	text-align: center;
 	width: 100%;
 }
@@ -355,22 +348,15 @@ footer .creditos, footer .req_tecnicos, footer .creditos_intro, footer .req_tecn
 }
 .arrow_intro:link{
 	position: absolute;
-	top: 47%;
+	top: 46%;
 	left: 50%;
-	margin-left: -36px;
-	background: url(../img/arrow_intro.png) no-repeat right top;
-	background-size: 90%;
-	width: 63px;
-	height: 63px;
+	margin-left: -21px;
 	display: block;
 	margin-top: 14px;
 	padding: 0;
 }
-.arrow_intro:hover{
-	background: url(../img/arrow_intro_over.png) no-repeat right top;
-	background-size: 90%;
-	width: 63px;
-	height: 63px;
+.arrow_intro i{
+	color: #FFF;
 }
 .btn_close_intro{
 	top: 0;
