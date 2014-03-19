@@ -8,7 +8,7 @@ if($(".questions_3_1 li div").html().length == 1){
         'width': 21,
         'padding': 1
     });
-}else if($(".questions_3_1 li div figure")){
+}else if($(".questions_3_1 li div figure").length){
     $(".questions_3_1 li div").css('padding',0);
 }
 
@@ -119,7 +119,7 @@ if($(".questions_3_2 li div").html().length == 1){
         'width': 21,
         'padding': 1
     });
-}else if($(".questions_3_2 li div figure")){
+}else if($(".questions_3_2 li div figure").length){
     $(".questions_3_2 li div").css('padding',0);
 }
 
@@ -230,7 +230,7 @@ if($(".questions_3_3 li div").html().length == 1){
         'width': 21,
         'padding': 1
     });
-}else if($(".questions_3_3 li div figure")){
+}else if($(".questions_3_3 li div figure").length){
     $(".questions_3_3 li div").css('padding',0);
 }
 
