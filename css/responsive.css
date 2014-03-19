@@ -1,4 +1,13 @@
 /*--Responsive--*/
+@media screen and (max-width: 1024px){
+	.grid12{
+			margin: 10px 1%;
+			padding: 0;
+			width: 98.3%;
+			vertical-align: top;
+		}
+}
+
 @media screen and (max-width: 900px){
 	footer ul li{
 		font-size: 13px;
@@ -35,13 +44,7 @@
 		line-height: 22px !important;
 	}
 	.main_container header {
-		background: url(../img/back_menu_800.png) no-repeat right top;
 		height: 58px;
-	}
-
-	/*--Layout intro--*/
-	.back_intro{
-		background: url(../img/back_intro_800.png) no-repeat right top !important;
 	}
 
 	footer ul li{
@@ -65,13 +68,7 @@
 
 	/*--Header--*/
 	.main_container header {
-		background: url(../img/back_menu_768.png) no-repeat right top;
 		height: 58px;
-	}
-
-	/*--Layout intro--*/
-	.back_intro{
-		background: url(../img/back_intro_680.png) no-repeat right top !important;
 	}
 }
 
@@ -100,7 +97,6 @@
 		line-height: 19px !important;
 	}
 	.main_container header {
-		background: url(../img/back_menu_680.png) no-repeat right top;
 		height: 58px;
 	}
 
@@ -129,4 +125,12 @@
 		display: none;
 	}
 
+}
+
+@media screen and (max-width: 360px){
+	body{
+		width: 360px;
+		padding: 0;
+		margin: 0;
+	}
 }
