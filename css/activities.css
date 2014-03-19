@@ -60,7 +60,6 @@
 	cursor: default;
 }
 .select_activity li div{
-	boder: thin solid red;
 	display: inline-block;
 	background: #DDD;
 	position: relative;
@@ -72,7 +71,14 @@
 	cursor: pointer;
 	padding: 1px 8px;
 }
+.select_activity li div img{
+	width: 100%;
+}
 .select_activity li div:hover{
+	background: #AAA;
+	color: #FFF
+}
+.back_to_hover:hover{
 	background: #AAA;
 	color: #FFF
 }
