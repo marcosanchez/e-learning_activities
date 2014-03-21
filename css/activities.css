@@ -25,10 +25,13 @@
 	background-color: #00B3B8;
 }
 .btn_activities div:first-child span{
-	padding: 8px 10px 4px 10px;
+	padding: 9px 10px 4px 10px;
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;
+}
+.btn_activities div:first-child i{
+	font-size: 14px;
 }
 
 .btn_activities div:nth-child(2){
@@ -36,13 +39,16 @@
 	display: inline-block;
 	margin-right: 5px;
 	position: relative;
-	background-color: #1487F3;
+	background-color: #3498DB;
 }
 .btn_activities div:nth-child(2) span{
-	padding: 8px 10px 4px 10px;
+	padding: 9px 10px 4px 10px;
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;
+}
+.btn_activities div:nth-child(2) i{
+	font-size: 14px;
 }
 
 .btn_activities div:last-child{
@@ -54,11 +60,14 @@
 	background-color: #4CAE4C;
 }
 .btn_activities div:last-child span{
-	padding: 8px 10px 4px 10px;
+	padding: 9px 10px 4px 10px;
 	display: inline-block;
 	margin-right: 5px;
 	margin: 0 auto;
 	color: #FFF;
+}
+.btn_activities div:last-child i{
+	font-size: 15px;
 }
 
 .wrong_icon{
