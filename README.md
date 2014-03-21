@@ -1,6 +1,6 @@
 <h1>E-learning activities 1.0</h1>
 
-Activities e-leargning is licensed under a Creative Commons Attribution 3.0 Unported (CC BY 3.0) (http://creativecommons.org/licenses/by/3.0/) and MIT License - http://opensource.org/licenses/mit-license.html.
+E-learning activities is licensed under a Creative Commons Attribution 3.0 Unported (CC BY 3.0) (http://creativecommons.org/licenses/by/3.0/) and MIT License - http://opensource.org/licenses/mit-license.html.
 
 You are allowed to use these elements anywhere and modify it if you want.
 
