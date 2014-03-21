@@ -38,7 +38,7 @@
 }
 
 .btn_activities div:nth-child(2){
-	width: 89px;
+	width: 85px;
 	display: inline-block;
 	margin-right: 5px;
 	position: relative;
@@ -249,7 +249,7 @@
 	text-transform: uppercase;
 }
 .black_box input{
-	background-color: #000;
+	background-color: #333;
 }
 
 /*--Evaluate big content--*/

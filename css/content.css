@@ -43,7 +43,7 @@
 /*--Photo frames--*/
  figure figcaption{
 	font-family: "open_sanslight";
-	color: #000;
+	color: #333;
 	font-size: 13px;
 }
  figure img{
@@ -129,7 +129,7 @@ table{
 	font-family: 'open_sansregular';
 	padding: 5px 8px;
 	background-color: #FCFCFC;
-	color: #000;
+	color: #333;
 	width: 0;
 	text-align: left;
 }
@@ -138,18 +138,18 @@ table{
 }
 .table_ver tr:nth-child(2n+3) td{
 	background-color: #E3F6FB;
-	color: #000;
+	color: #333;
 }
 .table_hor tr:nth-child(2n+2) td{
 	background-color: #E3F6FB;
-	color: #000;
+	color: #333;
 }
 
 /*--List--*/
 .normal_list, .word_list, .number_list, .no_list{
 	margin: 2px 1%;
 	font-family: 'open_sansregular';
-	color: #000;
+	color: #333;
 	text-align: justify;
 	padding: 0;
 	vertical-align: top;
@@ -162,7 +162,7 @@ table{
 .normal_list li, .word_list li, .number_list li {
 	margin: 3px 0 10px 2.3%;
 	font-family: 'open_sansregular';
-	color: #000;
+	color: #333;
 	text-align: justify;
 	padding: 0;
 }
@@ -183,7 +183,7 @@ table{
 .word_list li .normal_list li, .number_list li .normal_list li{
 	margin: 3px 0 3px 0;
 	font-family: 'open_sansregular';
-	color: #000;
+	color: #333;
 	text-align: justify;
 	padding: 0;
 }
@@ -193,7 +193,7 @@ table{
 .word_list li .no_list li, .number_list li .no_list li{
 	margin: 3px 0 3px 0;
 	font-family: 'open_sansregular';
-	color: #000;
+	color: #333;
 	text-align: justify;
 	padding-left: 4.2%;
 }
@@ -368,7 +368,7 @@ ol[class="number_list grid13"] li:before, ol[class="grid13 number_list"] li:befo
 	padding: 0.5% 1%;
 	font-family: 'open_sansregular';
 	font-size: 15px;
-	color: #000;
+	color: #333;
 }
 
 /*--Tabs--*/
@@ -376,7 +376,7 @@ ol[class="number_list grid13"] li:before, ol[class="grid13 number_list"] li:befo
 	display: inline-block;
 	margin: 10px 0.5%;
 	vertical-align: top;
-	color: #000;
+	color: #333;
 }
 #tabs div{
 	padding: 0.5% 1%;
@@ -586,7 +586,7 @@ ol[class="number_list grid13"] li:before, ol[class="grid13 number_list"] li:befo
 	display: block;
 	height: inherit;
 	background: #FFF;
-	color: #000;
+	color: #333;
 	border: 1px solid #DADADA;
 	width: 200px;
 	text-align: justify;
