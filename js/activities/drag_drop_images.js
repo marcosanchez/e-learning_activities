@@ -116,7 +116,7 @@ $("#reset_answers_8_1").click(function () {
     for (qu in questions_8_1) {
         questions_8_1[qu]['answer'] = 0;
     }
-    $('.answers_place_8_1').parent().find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_8_1').parent().find('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
     $('.answer_options_8_1 .answer_par').each(function( key, element) {
         $(element).css("visibility","visible");
@@ -146,6 +146,6 @@ $("#answers_8_1").click(function () {
         }
     }
 
-    $('.answers_place_8_1').parent().find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.answers_place_8_1').parent().find('.good_icon, .wrong_icon').parent().fadeOut("normal");
 });
 /*--Page 8 activity 1--*/
