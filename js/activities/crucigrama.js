@@ -127,136 +127,162 @@ $("#check_answers_11_1").click(function () {
 	};
 	string_word_12 = word_12.join("");
 
+    $(".crucigrama span").addClass('activity_span_crucigrama');
+
     if(string_word_1 == "savings account" && string_word_1.length > 1) {
-        $("#good_11_1").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_1").css("display","none");
+        $("#eval_1").fadeIn("normal").css("display","inline-block");
+        $("#eval_1 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_1 .wrong_icon").css("display","none");
     }else if(string_word_1 != "savings account" && string_word_1.length > 1) {
-        $("#wrong_11_1").fadeIn("normal").css("display","inline-block");
-        $("#good_11_1").css("display","none");
+        $("#eval_1").fadeIn("normal").css("display","inline-block");
+        $("#eval_1 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_1 .good_icon").css("display","none");
     }else if(string_word_1.length == 0) {
-        $("#good_11_1").fadeOut("normal");
-        $("#wrong_11_1").fadeOut("normal");
+        $("#eval_1 .good_icon").fadeOut("normal");
+        $("#eval_1 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_2 == "checking account" && string_word_2.length > 1){
-        $("#good_11_2").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_2").css("display","none");
+        $("#eval_2").fadeIn("normal").css("display","inline-block");
+        $("#eval_2 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_2 .wrong_icon").css("display","none");
     }else if(string_word_2 != "checking account" && string_word_2.length > 1){
-        $("#wrong_11_2").fadeIn("normal").css("display","inline-block");
-        $("#good_11_2").css("display","none");
+        $("#eval_2").fadeIn("normal").css("display","inline-block");
+        $("#eval_2 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_2 .good_icon").css("display","none");
     }else if(string_word_2.length == 0){
-        $("#good_11_2").fadeOut("normal");
-        $("#wrong_11_2").fadeOut("normal");
+        $("#eval_2 .good_icon").fadeOut("normal");
+        $("#eval_2 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_3 == "close an account" && string_word_3.length > 2){
-        $("#good_11_3").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_3").css("display","none");
+        $("#eval_3").fadeIn("normal").css("display","inline-block");
+        $("#eval_3 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_3 .wrong_icon").css("display","none");
     }else if(string_word_3 != "close an account" && string_word_3.length > 2){
-        $("#wrong_11_3").fadeIn("normal").css("display","inline-block");
-        $("#good_11_3").css("display","none");
+        $("#eval_3").fadeIn("normal").css("display","inline-block");
+        $("#eval_3 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_3 .good_icon").css("display","none");
     }else if(string_word_3.length == 0){
-        $("#good_11_3").fadeOut("normal");
-        $("#wrong_11_3").fadeOut("normal");
+        $("#eval_3 .good_icon").fadeOut("normal");
+        $("#eval_3 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_4 == "deposit" && string_word_4.length > 0) {
-        $("#good_11_4").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_4").css("display","none");
+        $("#eval_4").fadeIn("normal").css("display","inline-block");
+        $("#eval_4 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_4 .wrong_icon").css("display","none");
     }else if(string_word_4 != "deposit" && string_word_4.length > 0) {
-        $("#wrong_11_4").fadeIn("normal").css("display","inline-block");
-        $("#good_11_4").css("display","none");
+        $("#eval_4").fadeIn("normal").css("display","inline-block");
+        $("#eval_4 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_4 .good_icon").css("display","none");
     }else if(string_word_4.length == 0) {
-        $("#good_11_4").fadeOut("normal");
-        $("#wrong_11_4").fadeOut("normal");
+        $("#eval_4 .good_icon").fadeOut("normal");
+        $("#eval_4 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_5 == "withdrawal" && string_word_5.length > 0) {
-        $("#good_11_5").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_5").css("display","none");
+        $("#eval_5").fadeIn("normal").css("display","inline-block");
+        $("#eval_5 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_5 .wrong_icon").css("display","none");
     } else if(string_word_5 != "withdrawal" && string_word_5.length > 0) {
-        $("#wrong_11_5").fadeIn("normal").css("display","inline-block");
-        $("#good_11_5").css("display","none");
+        $("#eval_5").fadeIn("normal").css("display","inline-block");
+        $("#eval_5 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_5 .good_icon").css("display","none");
     } else if(string_word_5.length == 0) {
-        $("#good_11_5").fadeOut("normal");
-        $("#wrong_11_5").fadeOut("normal");
+        $("#eval_5 .good_icon").fadeOut("normal");
+        $("#eval_5 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_6 == "debit card" && string_word_6.length > 1){
-        $("#good_11_6").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_6").css("display","none");
+        $("#eval_6").fadeIn("normal").css("display","inline-block");
+        $("#eval_6 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_6 .wrong_icon").css("display","none");
     } else if(string_word_6 != "debit card" && string_word_6.length > 1){
-        $("#wrong_11_6").fadeIn("normal").css("display","inline-block");
-        $("#good_11_6").css("display","none");
+        $("#eval_6").fadeIn("normal").css("display","inline-block");
+        $("#eval_6 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_6 .good_icon").css("display","none");
     } else if(string_word_6.length==0) {
-        $("#good_11_6").fadeOut("normal");
-        $("#wrong_11_6").fadeOut("normal");
+        $("#eval_6 .good_icon").fadeOut("normal");
+        $("#eval_6 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_7 == "signature" && string_word_7.length > 0){
-        $("#good_11_7").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_7").css("display","none");
+        $("#eval_7").fadeIn("normal").css("display","inline-block");
+        $("#eval_7 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_7 .wrong_icon").css("display","none");
     } else if(string_word_7 != "signature" && string_word_7.length > 0){
-        $("#wrong_11_7").fadeIn("normal").css("display","inline-block");
-        $("#good_11_7").css("display","none");
+        $("#eval_7").fadeIn("normal").css("display","inline-block");
+        $("#eval_7 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_7 .good_icon").css("display","none");
     } else if(string_word_7.length==0) {
-        $("#good_11_7").fadeOut("normal");
-        $("#wrong_11_7").fadeOut("normal");
+        $("#eval_7 .good_icon").fadeOut("normal");
+        $("#eval_7 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_8 == "teller" && string_word_8.length > 0){
-        $("#good_11_8").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_8").css("display","none");
+        $("#eval_8").fadeIn("normal").css("display","inline-block");
+        $("#eval_8 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_8 .wrong_icon").css("display","none");
     } else if(string_word_8 != "teller" && string_word_8.length > 0){
-        $("#wrong_11_8").fadeIn("normal").css("display","inline-block");
-        $("#good_11_8").css("display","none");
+        $("#eval_8").fadeIn("normal").css("display","inline-block");
+        $("#eval_8 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_8 .good_icon").css("display","none");
     } else if(string_word_8.length==0) {
-        $("#good_11_8").fadeOut("normal");
-        $("#wrong_11_8").fadeOut("normal");
+        $("#eval_8 .good_icon").fadeOut("normal");
+        $("#eval_8 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_9 == "credit card" && string_word_9.length > 1){
-        $("#good_11_9").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_9").css("display","none");
+        $("#eval_9").fadeIn("normal").css("display","inline-block");
+        $("#eval_9 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_9 .wrong_icon").css("display","none");
     } else if(string_word_9 != "credit card" && string_word_9.length > 1){
-        $("#wrong_11_9").fadeIn("normal").css("display","inline-block");
-        $("#good_11_9").css("display","none");
+        $("#eval_9").fadeIn("normal").css("display","inline-block");
+        $("#eval_9 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_9 .good_icon").css("display","none");
     } else if(string_word_9.length==0) {
-        $("#good_11_9").fadeOut("normal");
-        $("#wrong_11_9").fadeOut("normal");
+        $("#eval_9 .good_icon").fadeOut("normal");
+        $("#eval_9 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_10 == "right away" && string_word_10.length > 1){
-        $("#good_11_10").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_10").css("display","none");
+        $("#eval_10").fadeIn("normal").css("display","inline-block");
+        $("#eval_10 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_10 .wrong_icon").css("display","none");
     } else if(string_word_10 != "right away" && string_word_10.length > 1){
-        $("#wrong_11_10").fadeIn("normal").css("display","inline-block");
-        $("#good_11_10").css("display","none");
+        $("#eval_10").fadeIn("normal").css("display","inline-block");
+        $("#eval_10 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_10 .good_icon").css("display","none");
     } else if(string_word_10.length==0) {
-        $("#good_11_10").fadeOut("normal");
-        $("#wrong_11_10").fadeOut("normal");
+        $("#eval_10 .good_icon").fadeOut("normal");
+        $("#eval_10 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_11 == "cash" && string_word_11.length > 0){
-        $("#good_11_11").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_11").css("display","none");
+        $("#eval_11").fadeIn("normal").css("display","inline-block");
+        $("#eval_11 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_11 .wrong_icon").css("display","none");
     } else if(string_word_11 != "cash" && string_word_11.length > 0){
-        $("#wrong_11_11").fadeIn("normal").css("display","inline-block");
-        $("#good_11_11").css("display","none");
+        $("#eval_11").fadeIn("normal").css("display","inline-block");
+        $("#eval_11 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_11 .good_icon").css("display","none");
     } else if(string_word_11.length==0) {
-        $("#good_11_11").fadeOut("normal");
-        $("#wrong_11_11").fadeOut("normal");
+        $("#eval_11 .good_icon").fadeOut("normal");
+        $("#eval_11 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_12 == "passport" && string_word_12.length > 0){
-        $("#good_11_12").fadeIn("normal").css("display","inline-block");
-        $("#wrong_11_12").css("display","none");
+        $("#eval_12").fadeIn("normal").css("display","inline-block");
+        $("#eval_12 .good_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_12 .wrong_icon").css("display","none");
     } else if(string_word_12 != "passport" && string_word_12.length > 0){
-        $("#wrong_11_12").fadeIn("normal").css("display","inline-block");
-        $("#good_11_12").css("display","none");
+        $("#eval_12").fadeIn("normal").css("display","inline-block");
+        $("#eval_12 .wrong_icon").fadeIn("normal").css("display","inline-block");
+        $("#eval_12 .good_icon").css("display","none");
     } else if(string_word_12.length==0) {
-        $("#good_11_12").fadeOut("normal");
-        $("#wrong_11_12").fadeOut("normal");
+        $("#eval_12 .good_icon").fadeOut("normal");
+        $("#eval_12 .wrong_icon").fadeOut("normal");
     };
 
     if(string_word_1.length > 1 || string_word_2.length > 1 || string_word_3.length > 2 || string_word_4.length > 0 || string_word_5.length > 0 || string_word_6.length > 1 || string_word_7.length > 0 || string_word_8.length > 0 || string_word_9.length > 1 || string_word_10.length > 1 || string_word_11.length > 0 || string_word_12.length > 0){
@@ -303,10 +329,7 @@ $('#reset_answers_11_1').click(function () {
     $('.box_crucigrama').css('color','#000');
     $('.box_crucigrama').val('');
     $('.black_box .box_crucigrama').val(' ');
-    for(i = 1; i <= 12; i += 1){
-        $('#good_11_' + i).fadeOut('normal');
-        $('#wrong_11_' + i).fadeOut('normal');
-    }
+    $(".crucigrama span").fadeOut('normal');
     $('#answers_11_1').hide();
     $(this).hide();
     $('#check_answers_11_1').fadeIn();
@@ -434,9 +457,6 @@ $("#answers_11_1").click(function () {
             }
         };
     }
-    for(i = 1; i <= 12; i += 1){
-        $('#good_11_' + i).fadeOut('normal');
-        $('#wrong_11_' + i).fadeOut('normal');
-    }
+    $(".crucigrama span").fadeOut('normal');
 });
 /*--Activity 1 page 16--*/

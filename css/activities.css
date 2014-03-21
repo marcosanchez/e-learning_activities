@@ -81,6 +81,14 @@
 	margin: 0 0 -4px 0;
 	padding: 0;
 }
+.activity_span_crucigrama{
+	display: none;
+	position: relative;
+	width:21px;
+	height:22px;
+	margin: 0 4px -4px 4px;
+	padding: 0;
+}
 .wrong_icon{
 	display: none;
 	font-size: 25px;
@@ -288,9 +296,11 @@
 	padding: 0;
 	border: none;
 	margin: 0;
+	display: inline-block;
 }
 .concentrese tr td div{
 	border-radius: 5px;
+	display: inline-block;
 }
 .concentrese tr td:first-child div{
 	margin-left: 0;
