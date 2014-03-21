@@ -19,9 +19,12 @@
 	box-sizing: border-box;
 }
 .btn_activities div:first-child{
-	width: 90px;
+	width: 85px;
 	margin-right: 5px;
 	position: relative;
+	background-color: #00B3B8;
+}
+.btn_activities div:first-child:hover{
 	background-color: #00B3B8;
 }
 .btn_activities div:first-child span{
@@ -53,7 +56,7 @@
 
 .btn_activities div:last-child{
 	position: relative;
-	width: 105px;
+	width: 92px;
 	display: inline-block;
 	margin-right: 5px;
 	text-align: center;
