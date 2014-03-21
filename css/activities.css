@@ -81,7 +81,7 @@
 	margin: 0 0 -4px 0;
 	padding: 0;
 }
-.activity_span_crucigrama{
+.activity_span_crossword{
 	display: none;
 	position: relative;
 	width:21px;
@@ -232,17 +232,17 @@
 }
 
 /*--Crucigrama--*/
-.crucigrama{
+.crossword{
 	width: auto;
 }
-.crucigrama tr td{
+.crossword tr td{
 	border: none;
 	background-color: white;
 	width: 28px;
 	height: 28px;
 	padding: 0;
 }
-.box_crucigrama{
+.box_crossword{
 	width: 28px;
 	height: 28px;
 	padding: 0;
@@ -292,34 +292,34 @@
 #check_answers_13_1 #bien img, #check_answers_13_1 #mal img{
 	width: 100%;
 }
-.concentrese tr td{
+.concentrate tr td{
 	padding: 0;
 	border: none;
 	margin: 0;
 	display: inline-block;
 }
-.concentrese tr td div{
+.concentrate tr td div{
 	border-radius: 5px;
 	display: inline-block;
 }
-.concentrese tr td:first-child div{
+.concentrate tr td:first-child div{
 	margin-left: 0;
 }
-.concentrese tr td:last-child div{
+.concentrate tr td:last-child div{
 	margin-right: 0;
 }
-.concentrese tr td{
+.concentrate tr td{
 	padding: 0;
 	border: none;
 	margin: 0;
 }
-.concentrese .card-container {
+.concentrate .card-container {
 	position: relative;
 	width:139px;
 	height:148px;
 	margin: 6px;
 }
-.concentrese .card {
+.concentrate .card {
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
@@ -331,7 +331,7 @@
 	width: 100%;
 	cursor: pointer;
 }
-.concentrese .card .side {
+.concentrate .card .side {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
@@ -348,7 +348,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=1 );
 
 }
-.concentrese .card .back {
+.concentrate .card .back {
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);

@@ -1,13 +1,13 @@
 /*--No configurar esta parte--*/
 var array_width = new Array();
 var array_height = new Array();
-$(".crucigrama tr td").each(function(index) {
+$(".crossword tr td").each(function(index) {
     if($(this).html()=="&nbsp;" && $(this).hasClass('black_box')!=true){
         $(this).css("border","thin solid #BBB");
-        $(this).html("<input class='box_crucigrama' size='1' maxlength='1' type='text'/>");
+        $(this).html("<input class='box_crossword' size='1' maxlength='1' type='text'/>");
     }else if($(this).html()=="&nbsp;" && $(this).hasClass('black_box')==true){
     	$(this).css("border","thin solid #BBB");
-    	$(this).html("<input value=' ' class='box_crucigrama' size='1' maxlength='1' type='text' disabled='disabled'/>");
+    	$(this).html("<input value=' ' class='box_crossword' size='1' maxlength='1' type='text' disabled='disabled'/>");
     }
 });
 
@@ -43,7 +43,7 @@ var string_word_11 = '';
 var string_word_12 = '';
 
 for (var i = 1; i <= 12; i++) {
-    $(".word_"+ i +"_1 input").before("<span id='word_"+ i +"'>"+ i +"</span>");
+    $(".word_"+ i +"_1 input").before("<div id='word_"+ i +"'>"+ i +"</div>");
     $("#word_"+i).css({
         "font-size":8,
         "position":"absolute",
@@ -68,66 +68,66 @@ $("#check_answers_11_1").click(function () {
     word_12 = [];
 
 	for (var i = 1; i <= 15; i++) {
-		word_1.push($(".word_1_" + i + " .box_crucigrama").val());
+		word_1.push($(".word_1_" + i + " .box_crossword").val());
 	};
 	string_word_1 = word_1.join("");
 
 	for (var i = 1; i <= 16; i++) {
-		word_2.push($(".word_2_" + i + " .box_crucigrama").val());
+		word_2.push($(".word_2_" + i + " .box_crossword").val());
 	};
 	string_word_2 = word_2.join("");
 
 	for (var i = 1; i <= 16; i++) {
-		word_3.push($(".word_3_" + i + " .box_crucigrama").val());
+		word_3.push($(".word_3_" + i + " .box_crossword").val());
 	};
 	string_word_3 = word_3.join("");
 
 	for (var i = 1; i <= 7; i++) {
-		word_4.push($(".word_4_" + i + " .box_crucigrama").val());
+		word_4.push($(".word_4_" + i + " .box_crossword").val());
 	};
 	string_word_4 = word_4.join("");
 
 	for (var i = 1; i <= 10; i++) {
-		word_5.push($(".word_5_" + i + " .box_crucigrama").val());
+		word_5.push($(".word_5_" + i + " .box_crossword").val());
 	};
 	string_word_5 = word_5.join("");
 
 	for (var i = 1; i <= 10; i++) {
-		word_6.push($(".word_6_" + i + " .box_crucigrama").val());
+		word_6.push($(".word_6_" + i + " .box_crossword").val());
 	};
 	string_word_6 = word_6.join("");
 
 	for (var i = 1; i <= 9; i++) {
-		word_7.push($(".word_7_" + i + " .box_crucigrama").val());
+		word_7.push($(".word_7_" + i + " .box_crossword").val());
 	};
 	string_word_7 = word_7.join("");
 
 	for (var i = 1; i <= 6; i++) {
-		word_8.push($(".word_8_" + i + " .box_crucigrama").val());
+		word_8.push($(".word_8_" + i + " .box_crossword").val());
 	};
 	string_word_8 = word_8.join("");
 
 	for (var i = 1; i <= 11; i++) {
-		word_9.push($(".word_9_" + i + " .box_crucigrama").val());
+		word_9.push($(".word_9_" + i + " .box_crossword").val());
 	};
 	string_word_9 = word_9.join("");
 
 	for (var i = 1; i <= 10; i++) {
-		word_10.push($(".word_10_" + i + " .box_crucigrama").val());
+		word_10.push($(".word_10_" + i + " .box_crossword").val());
 	};
 	string_word_10 = word_10.join("");
 
 	for (var i = 1; i <= 4; i++) {
-		word_11.push($(".word_11_" + i + " .box_crucigrama").val());
+		word_11.push($(".word_11_" + i + " .box_crossword").val());
 	};
 	string_word_11 = word_11.join("");
 
 	for (var i = 1; i <= 8; i++) {
-		word_12.push($(".word_12_" + i + " .box_crucigrama").val());
+		word_12.push($(".word_12_" + i + " .box_crossword").val());
 	};
 	string_word_12 = word_12.join("");
 
-    $(".crucigrama span").addClass('activity_span_crucigrama');
+    $(".crossword span").addClass('activity_span_crossword');
 
     if(string_word_1 == "savings account" && string_word_1.length > 1) {
         $("#eval_1").fadeIn("normal").css("display","inline-block");
@@ -326,10 +326,10 @@ $('#reset_answers_11_1').click(function () {
     string_word_11 = '';
     string_word_12 = '';
 
-    $('.box_crucigrama').css('color','#000');
-    $('.box_crucigrama').val('');
-    $('.black_box .box_crucigrama').val(' ');
-    $(".crucigrama span").fadeOut('normal');
+    $('.box_crossword').css('color','#000');
+    $('.box_crossword').val('');
+    $('.black_box .box_crossword').val(' ');
+    $(".crossword span").fadeOut('normal');
     $('#answers_11_1').hide();
     $(this).hide();
     $('#check_answers_11_1').fadeIn();
@@ -341,9 +341,9 @@ $("#answers_11_1").click(function () {
         string_word_1 = 'savings account';
         word_1 = string_word_1.split('');
         for (var i = 1; i <= 15; i++) {
-            if($(".word_1_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_1_" + i + " .box_crucigrama").val(word_1[i-1]);
-                $(".word_1_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_1_" + i + " .box_crossword").val().length >= 1){
+                $(".word_1_" + i + " .box_crossword").val(word_1[i-1]);
+                $(".word_1_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -351,9 +351,9 @@ $("#answers_11_1").click(function () {
         string_word_2 = 'checking account';
         word_2 = string_word_2.split('');
         for (var i = 1; i <= 16; i++) {
-            if($(".word_2_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_2_" + i + " .box_crucigrama").val(word_2[i-1]);
-                $(".word_2_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_2_" + i + " .box_crossword").val().length >= 1){
+                $(".word_2_" + i + " .box_crossword").val(word_2[i-1]);
+                $(".word_2_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -361,9 +361,9 @@ $("#answers_11_1").click(function () {
         string_word_3 = 'close an account';
         word_3 = string_word_3.split('');
         for (var i = 1; i <= 16; i++) {
-            if($(".word_3_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_3_" + i + " .box_crucigrama").val(word_3[i-1]);
-                $(".word_3_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_3_" + i + " .box_crossword").val().length >= 1){
+                $(".word_3_" + i + " .box_crossword").val(word_3[i-1]);
+                $(".word_3_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -371,9 +371,9 @@ $("#answers_11_1").click(function () {
         string_word_4 = 'deposit';
         word_4 = string_word_4.split('');
         for (var i = 1; i <= 7; i++) {
-            if($(".word_4_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_4_" + i + " .box_crucigrama").val(word_4[i-1]);
-                $(".word_4_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_4_" + i + " .box_crossword").val().length >= 1){
+                $(".word_4_" + i + " .box_crossword").val(word_4[i-1]);
+                $(".word_4_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -381,9 +381,9 @@ $("#answers_11_1").click(function () {
         string_word_5 = 'withdrawal';
         word_5 = string_word_5.split('');
         for (var i = 1; i <= 10; i++) {
-            if($(".word_5_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_5_" + i + " .box_crucigrama").val(word_5[i-1]);
-                $(".word_5_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_5_" + i + " .box_crossword").val().length >= 1){
+                $(".word_5_" + i + " .box_crossword").val(word_5[i-1]);
+                $(".word_5_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -391,9 +391,9 @@ $("#answers_11_1").click(function () {
         string_word_6 = 'debit card';
         word_6 = string_word_6.split('');
         for (var i = 1; i <= 10; i++) {
-            if($(".word_6_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_6_" + i + " .box_crucigrama").val(word_6[i-1]);
-                $(".word_6_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_6_" + i + " .box_crossword").val().length >= 1){
+                $(".word_6_" + i + " .box_crossword").val(word_6[i-1]);
+                $(".word_6_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -401,9 +401,9 @@ $("#answers_11_1").click(function () {
         string_word_7 = 'signature';
         word_7 = string_word_7.split('');
         for (var i = 1; i <= 9; i++) {
-            if($(".word_7_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_7_" + i + " .box_crucigrama").val(word_7[i-1]);
-                $(".word_7_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_7_" + i + " .box_crossword").val().length >= 1){
+                $(".word_7_" + i + " .box_crossword").val(word_7[i-1]);
+                $(".word_7_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -411,9 +411,9 @@ $("#answers_11_1").click(function () {
         string_word_8 = 'teller';
         word_8 = string_word_8.split('');
         for (var i = 1; i <= 6; i++) {
-            if($(".word_8_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_8_" + i + " .box_crucigrama").val(word_8[i-1]);
-                $(".word_8_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_8_" + i + " .box_crossword").val().length >= 1){
+                $(".word_8_" + i + " .box_crossword").val(word_8[i-1]);
+                $(".word_8_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -421,9 +421,9 @@ $("#answers_11_1").click(function () {
         string_word_9 = 'credit card';
         word_9 = string_word_9.split('');
         for (var i = 1; i <= 11; i++) {
-            if($(".word_9_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_9_" + i + " .box_crucigrama").val(word_9[i-1]);
-                $(".word_9_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_9_" + i + " .box_crossword").val().length >= 1){
+                $(".word_9_" + i + " .box_crossword").val(word_9[i-1]);
+                $(".word_9_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -431,9 +431,9 @@ $("#answers_11_1").click(function () {
         string_word_10 = 'right away';
         word_10 = string_word_10.split('');
         for (var i = 1; i <= 10; i++) {
-            if($(".word_10_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_10_" + i + " .box_crucigrama").val(word_10[i-1]);
-                $(".word_10_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_10_" + i + " .box_crossword").val().length >= 1){
+                $(".word_10_" + i + " .box_crossword").val(word_10[i-1]);
+                $(".word_10_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -441,9 +441,9 @@ $("#answers_11_1").click(function () {
         string_word_11 = 'cash';
         word_11 = string_word_11.split('');
         for (var i = 1; i <= 4; i++) {
-            if($(".word_11_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_11_" + i + " .box_crucigrama").val(word_11[i-1]);
-                $(".word_11_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_11_" + i + " .box_crossword").val().length >= 1){
+                $(".word_11_" + i + " .box_crossword").val(word_11[i-1]);
+                $(".word_11_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
@@ -451,12 +451,12 @@ $("#answers_11_1").click(function () {
         string_word_12 = 'passport';
         word_12 = string_word_12.split('');
         for (var i = 1; i <= 8; i++) {
-            if($(".word_12_" + i + " .box_crucigrama").val().length >= 1){
-                $(".word_12_" + i + " .box_crucigrama").val(word_12[i-1]);
-                $(".word_12_" + i + " .box_crucigrama").css('color','#00B050');
+            if($(".word_12_" + i + " .box_crossword").val().length >= 1){
+                $(".word_12_" + i + " .box_crossword").val(word_12[i-1]);
+                $(".word_12_" + i + " .box_crossword").css('color','#00B050');
             }
         };
     }
-    $(".crucigrama span").fadeOut('normal');
+    $(".crossword span").fadeOut('normal');
 });
 /*--Activity 1 page 16--*/
