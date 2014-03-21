@@ -40,12 +40,15 @@ $("#check_answers_2_1").click(function () {
         questions_2_1[$(element).data('question')]['answer'] = user_answer;
 
         if(user_answer.length > 0) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');
             }
         }
     });
@@ -63,7 +66,7 @@ $('#reset_answers_2_1').click(function () {
     for (qu in questions_2_1) {
         questions_2_1[qu]['answer'] = false;
     }
-    $('.questions_2_1').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_1').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_1 input').each(function( key, element) {
         $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -74,7 +77,7 @@ $('#reset_answers_2_1').click(function () {
 });
 
 $("#answers_2_1").click(function () {
-    $('.questions_2_1').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_1').find('.good_icon, .wrong_icon').parent().fadeOut("normal"); //Cambios aquí
     $('.questions_2_1 input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
     for (question in questions_2_1) {
@@ -132,12 +135,15 @@ $("#check_answers_2_2").click(function () {
         questions_2_2[$(element).data('question')]['answer'] = user_answer;
 
         if(user_answer.length > 0) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');
             }
         }
     });
@@ -155,7 +161,7 @@ $('#reset_answers_2_2').click(function () {
     for (qu in questions_2_2) {
         questions_2_2[qu]['answer'] = false;
     }
-    $('.questions_2_2').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_2').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_2 input').each(function( key, element) {
         $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -166,7 +172,7 @@ $('#reset_answers_2_2').click(function () {
 });
 
 $("#answers_2_2").click(function () {
-    $('.questions_2_2').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_2').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_2 input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
     for (question in questions_2_2) {
@@ -226,12 +232,15 @@ $("#check_answers_2_3").click(function () {
         questions_2_3[$(element).data('question')]['answer'] = user_answer;
 
         if(user_answer.length > 0) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');
             }
         }
     });
@@ -249,7 +258,7 @@ $('#reset_answers_2_3').click(function () {
     for (qu in questions_2_3) {
         questions_2_3[qu]['answer'] = false;
     }
-    $('.questions_2_3').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_3').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_3 input').each(function( key, element) {
         $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -260,7 +269,7 @@ $('#reset_answers_2_3').click(function () {
 });
 
 $("#answers_2_3").click(function () {
-    $('.questions_2_3').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_3').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_3 input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
     for (question in questions_2_3) {
@@ -320,12 +329,15 @@ $("#check_answers_2_4").click(function () {
         questions_2_4[$(element).data('question')]['answer'] = user_answer;
 
         if(user_answer.length > 0) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');
             }
         }
     });
@@ -343,7 +355,7 @@ $('#reset_answers_2_4').click(function () {
     for (qu in questions_2_4) {
         questions_2_4[qu]['answer'] = false;
     }
-    $('.questions_2_4').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_4').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_4 input').each(function( key, element) {
         $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -354,7 +366,7 @@ $('#reset_answers_2_4').click(function () {
 });
 
 $("#answers_2_4").click(function () {
-    $('.questions_2_4').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_4').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_4 input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
     for (question in questions_2_4) {
@@ -414,12 +426,15 @@ $("#check_answers_2_5").click(function () {
         questions_2_5[$(element).data('question')]['answer'] = user_answer;
 
         if(user_answer.length > 0) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if ($.inArray(user_answer, correct_answer) > -1) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');
             }
         }
     });
@@ -437,7 +452,7 @@ $('#reset_answers_2_5').click(function () {
     for (qu in questions_2_5) {
         questions_2_5[qu]['answer'] = false;
     }
-    $('.questions_2_5').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_5').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_5 input').each(function( key, element) {
         $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -448,7 +463,7 @@ $('#reset_answers_2_5').click(function () {
 });
 
 $("#answers_2_5").click(function () {
-    $('.questions_2_5').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_2_5').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_2_5 input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
     for (question in questions_2_5) {

@@ -131,7 +131,6 @@ table{
 	background-color: #FCFCFC;
 	color: #333;
 	width: 0;
-	text-align: left;
 }
 .table1 tr td p, .table12 tr td p, .table12c tr td p, .table13 tr td p, .table13c tr td p, .table23 tr td p, .table23c tr td p{
 	text-align: left;

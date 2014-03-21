@@ -81,12 +81,15 @@ $("#check_answers_6_1").click(function () {
                 }
             }
 
+            $(element).find('.good_icon').parent().addClass('activity_span');
             if (answered_correct) {
+                $(element).find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').css('display','none');
             } else {
-                $(element).find('.good_icon').css('display','none');
+                $(element).find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).find('.good_icon').css('display','none');
             }
         }
     });
@@ -103,7 +106,7 @@ $("#reset_answers_6_1").click(function () {
     for (qu in questions_6_1) {
         questions_6_1[qu]['answer'] = false;
     }
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_6_1 input').each(function( key, element) {
         $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -114,7 +117,7 @@ $("#reset_answers_6_1").click(function () {
 
 $("#answers_6_1").click(function () {
 
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
     $('.questions_6_1 input').each(function( key, element) {
         $(element).parent().css({'color':'#000','font-family':'open_sansregular'});

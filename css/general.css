@@ -65,10 +65,10 @@ br{
 input{
 	cursor: pointer;
 	text-align: center;
-	height: 18px;
+	height: 22px;
 	margin-bottom: 4px;
 	color: #333;
-	padding-top: 3px;
+	padding-top: 1px;
 	border: thin solid #CCC;
 	font-family: "open_sansregular";
 }

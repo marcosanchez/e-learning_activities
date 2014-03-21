@@ -11,7 +11,7 @@
 	cursor: pointer;
 	border: 0;
 	text-align: center;
-	height: 31px;
+	height: 30px;
 	border-radius: 6px;
 	vertical-align: middle;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -19,10 +19,11 @@
 	box-sizing: border-box;
 }
 .btn_activities div:first-child{
-	width: 85px;
+	width: 77px;
 	margin-right: 5px;
 	position: relative;
 	background-color: #00B3B8;
+	font-size: 14px;
 }
 .btn_activities div:first-child:hover{
 	background-color: #00B3B8;
@@ -36,13 +37,13 @@
 .btn_activities div:first-child i{
 	font-size: 14px;
 }
-
 .btn_activities div:nth-child(2){
-	width: 85px;
+	width: 76px;
 	display: inline-block;
 	margin-right: 5px;
 	position: relative;
 	background-color: #3498DB;
+	font-size: 14px;
 }
 .btn_activities div:nth-child(2) span{
 	padding: 9px 10px 4px 10px;
@@ -53,14 +54,14 @@
 .btn_activities div:nth-child(2) i{
 	font-size: 14px;
 }
-
 .btn_activities div:last-child{
 	position: relative;
-	width: 92px;
+	width: 94px;
 	display: inline-block;
 	margin-right: 5px;
 	text-align: center;
 	background-color: #4CAE4C;
+	font-size: 14px;
 }
 .btn_activities div:last-child span{
 	padding: 9px 10px 4px 10px;
@@ -72,31 +73,25 @@
 .btn_activities div:last-child i{
 	font-size: 15px;
 }
-
+.activity_span{
+	display: none;
+	position: relative;
+	width:21px;
+	height:22px;
+	margin: 0 0 -4px 0;
+	padding: 0;
+}
 .wrong_icon{
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	background: url('../img/wrong_icon.png') no-repeat;
-	padding: 0;
-	border: none;
-	position: relative;
-	margin: 0 0 -7px 2px;
 	display: none;
-}
-.good_icon{
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	background: url('../img/good_icon.png') no-repeat;
-	padding: 0;
-	border: none;
-	position: relative;
-	margin: 0 0 -7px 2px;
+	font-size: 25px;
+	position: absolute;
+	color: #E74C3C;
+}.good_icon{
 	display: none;
+	font-size: 25px;
+	position: absolute;
+	color: #4CAE4C;
 }
-/*--Complete activity--*/
-
 
 /*--Select activity--*/
 .select_activity li{

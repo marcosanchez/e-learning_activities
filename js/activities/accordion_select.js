@@ -54,12 +54,15 @@ $("#check_answers_9_1").click(function () {
         questions_9_1[$(element).data('position')]['answer'] = selected_answer;
 
         if (selected_answer) {
+            $(element).next().find('.good_icon').parent().addClass('activity_span');
             if (correct_answer == selected_answer) {
+                $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).next().find('.wrong_icon').css('display','none');
             } else {
-                $(element).next().find('.good_icon').css('display','none');
-                $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");    
+                $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).next().find('.good_icon').css('display','none');  
             }
         }
     });
@@ -76,7 +79,7 @@ $("#reset_answers_9_1").click(function () {
     for (qu in questions_9_1) {
         questions_9_1[qu]['answer'] = false;
     }
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_9_1').find('select').css('color', '#000').removeAttr('disabled').val('');
 
     $('#answers_9_1').hide();
@@ -86,7 +89,7 @@ $("#reset_answers_9_1").click(function () {
 
 
 $("#answers_9_1").click(function () {
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
     for (question in questions_9_1) {
         var user_answer = questions_9_1[question]['answer'];

@@ -26,25 +26,27 @@ for (qu in questions_5_1) {
 $('.questions_5_1').on('click', 'input', function() {
     answered_5_1 = true;
     var selected_option = $(this).data('option');
-    var question = questions_5_1[$(this).closest('ul').data('question')];
+    var question = questions_5_1[$(this).closest('ol').data('question')];
 
     question['answer'] = selected_option;
 });
 
 
 $("#check_answers_5_1").click(function () {
-    $('.questions_5_1 ul').each(function( key, element) {
+    $('.questions_5_1 ol').each(function( key, element) {
         var correct_answer = answers_5_1[$(element).data('question')];
         var selected_answer = questions_5_1[$(element).data('question')]['answer'];
 
-
         if (selected_answer) {
+            $(element).parent().find('.good_icon').parent().addClass('activity_span');
             if (correct_answer === selected_answer) {
+                $(element).parent().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).parent().find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).parent().find('.wrong_icon').css('display','none');
             } else {
-                $(element).parent().find('.good_icon').css('display','none');
+                $(element).parent().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).parent().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).parent().find('.good_icon').css('display','none');
             }
 
         }
@@ -64,7 +66,7 @@ $("#reset_answers_5_1").click(function () {
         questions_5_1[qu]['answer'] = false;
     }
 
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_5_1 input').each(function( key, element) {
         $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
     });
@@ -75,7 +77,7 @@ $("#reset_answers_5_1").click(function () {
 });
 
 $("#answers_5_1").click(function () {
-    $('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
     $('.questions_5_1 input').each(function( key, element) {
         $(element).parent().css({'color':'#000','font-family':'open_sansregular'});

@@ -62,12 +62,15 @@ $('#check_answers_3_1').click(function () {
         var selected_answer = questions_3_1[$(element).data('question')]['answer'];
 
         if (selected_answer) {
+            $(element).find('.good_icon').parent().addClass('activity_span');
             if (correct_answer == selected_answer) {
+                $(element).find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').css('display','none');
             } else {
-                $(element).find('.good_icon').css('display','none');
+                $(element).find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).find('.good_icon').css('display','none');
             }
         }
     });
@@ -84,7 +87,7 @@ $('#reset_answers_3_1').click(function () {
     for (qu in questions_3_1) {
         questions_3_1[qu]['answer'] = 0;
     }
-    $('.questions_3_1').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_1').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_1 div').each(function( key, element) {
         $(element).css('background', '#DDD').css('color', '#000');
     });
@@ -95,7 +98,7 @@ $('#reset_answers_3_1').click(function () {
 });
 
 $("#answers_3_1").click(function () {
-    $('.questions_3_1').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_1').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_1 div').css('background', '#DDD').css('color', '#000');
 
     for (question in questions_3_1) {
@@ -173,12 +176,15 @@ $('#check_answers_3_2').click(function () {
         var selected_answer = questions_3_2[$(element).data('question')]['answer'];
 
         if (selected_answer) {
+            $(element).find('.good_icon').parent().addClass('activity_span');
             if (correct_answer == selected_answer) {
+                $(element).find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').css('display','none');
             } else {
-                $(element).find('.good_icon').css('display','none');
+                $(element).find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).find('.good_icon').css('display','none');
             }
         }
     });
@@ -195,7 +201,7 @@ $('#reset_answers_3_2').click(function () {
     for (qu in questions_3_2) {
         questions_3_2[qu]['answer'] = 0;
     }
-    $('.questions_3_2').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_2').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_2 div').each(function( key, element) {
         $(element).css('background', '#DDD').css('color', '#000');
     });
@@ -206,7 +212,7 @@ $('#reset_answers_3_2').click(function () {
 });
 
 $("#answers_3_2").click(function () {
-    $('.questions_3_2').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_2').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_2 div').css('background', '#DDD').css('color', '#000');
 
     for (question in questions_3_2) {
@@ -272,12 +278,15 @@ $('#check_answers_3_3').click(function () {
         var selected_answer = questions_3_3[$(element).data('question')]['answer'];
 
         if (selected_answer) {
+            $(element).find('.good_icon').parent().addClass('activity_span');
             if (correct_answer == selected_answer) {
+                $(element).find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.good_icon').fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').css('display','none');
             } else {
-                $(element).find('.good_icon').css('display','none');
+                $(element).find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
                 $(element).find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                $(element).find('.good_icon').css('display','none');
             }
         }
     });
@@ -294,7 +303,7 @@ $('#reset_answers_3_3').click(function () {
     for (qu in questions_3_3) {
         questions_3_3[qu]['answer'] = 0;
     }
-    $('.questions_3_3').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_3').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_3 div').each(function( key, element) {
         $(element).css('background', '#DDD').css('color', '#000');
     });
@@ -305,7 +314,7 @@ $('#reset_answers_3_3').click(function () {
 });
 
 $("#answers_3_3").click(function () {
-    $('.questions_3_3').find('.good_icon, .wrong_icon').fadeOut("normal");
+    $('.questions_3_3').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
     $('.questions_3_3 div').css('background', '#DDD').css('color', '#000');
 
     for (question in questions_3_3) {
