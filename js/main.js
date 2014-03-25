@@ -1,7 +1,3 @@
-/*--Link logotype--*/
-$('.course_title').on('click', function(){
-    window.open('../index.html', '_self');
-});
 /*--Activity in EPFAC button--*/
 var btn_epfac_up = false;
 $('.btn_epfac').on('click', function(){

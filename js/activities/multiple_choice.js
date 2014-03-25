@@ -3,6 +3,7 @@ $('#answers_2_1').hide();
 $("#reset_answers_2_1").hide();
 $("#check_answers_2_1").css('position','relative');
 
+
 // Introduce questions
 var answered_2_1 = false;
 var questions_2_1 = {
