@@ -3,7 +3,6 @@ $('#answers_2_1').hide();
 $("#reset_answers_2_1").hide();
 $("#check_answers_2_1").css('position','relative');
 
-
 // Introduce questions
 var answered_2_1 = false;
 var questions_2_1 = {
@@ -478,3 +477,103 @@ $("#answers_2_5").click(function () {
 });
 /*--Page 2 activity 5--*/
 
+/*--Page 2 activity 6--*/
+function create_multiple_choice (questions,check_button,reset_button,answer_button){
+    $(answer_button).hide();
+    $(reset_button).hide();
+    $(check_button).css('position','relative');
+
+    // Introduce questions
+    var answered = false;
+    var questions = {
+        'question_2_6_1' : {},
+        'question_2_6_2' : {},
+        'question_2_6_3' : {},
+        'question_2_6_4' : {},
+        'question_2_6_5' : {},
+        'question_2_6_6' : {},
+        'question_2_6_7' : {},
+        'question_2_6_8' : {}
+    };
+
+    // Introduce answers
+    var answers_2_6 = {
+        'question_2_6_1': ["father's", "father´s", "father"],
+        'question_2_6_2': ["sisters", "option_1", "option_2"],
+        'question_2_6_3': ["husband", "option_1", "option_2"],
+        'question_2_6_4': ["wife", "option_2"],
+        'question_2_6_5': ["children", "option_2"],
+        'question_2_6_6': ["husband", "option_2"],
+        'question_2_6_7': ["husband", "option_2"],
+        'question_2_6_8': ["husband", "option_2"]
+    };
+
+    for (qu in questions) {
+        questions[qu]['answer'] = '';
+    }
+
+    $('.'+questions+' input').on('change', function () {
+        answered = true;
+    });
+
+    $("#"+check_button).click(function () {
+        $('.'+questions+' input').each(function( key, element) {
+            var correct_answer = answers_2_6[$(element).data('question')];
+            var user_answer = $(element).val();
+
+            questions[$(element).data('question')]['answer'] = user_answer;
+
+            if(user_answer.length > 0) {
+                $(element).next().find('.good_icon').parent().addClass('activity_span');
+                if ($.inArray(user_answer, correct_answer) > -1) {
+                    $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.wrong_icon').css('display','none');
+                } else {
+                    $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.good_icon').css('display','none');
+                }
+            }
+        });
+
+       if(answered === true){
+            $(answer_button).fadeIn();
+            $(check_button).css('display', 'none');
+            $(reset_button).fadeIn();
+       }
+    });
+
+
+    $(reset_button).click(function () {
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
+        }
+        $('.'+questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $('.'+questions+' input').each(function( key, element) {
+            $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
+        });
+
+        $(answer_button).hide();
+        $(check_button).fadeIn();
+        $(this).hide();
+    });
+
+    $(answer_button).click(function () {
+        $('.'+questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $('.'+questions+' input').val('').css({'color':'#000','font-family':'open_sansregular'});
+
+        for (question in questions) {
+            var correct_answer = answers_2_6[question][0];
+            var user_answer = questions[question]['answer'];
+
+            if (user_answer.length > 0) {
+                $('.'+questions).find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+            }
+        }
+    });
+}
+/*--Page 2 activity 6--*/
+
+create_multiple_choice ('#questions_2_6','#check_answers_2_6','#reset_answers_2_6','#answers_2_6');
