@@ -512,12 +512,12 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         questions[qu]['answer'] = '';
     }
 
-    $('.'+questions+' input').on('change', function () {
+    $(questions+' input').on('change', function () {
         answered = true;
     });
 
     $("#"+check_button).click(function () {
-        $('.'+questions+' input').each(function( key, element) {
+        $(questions+' input').each(function( key, element) {
             var correct_answer = answers_2_6[$(element).data('question')];
             var user_answer = $(element).val();
 
@@ -550,8 +550,8 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         for (qu in questions) {
             questions[qu]['answer'] = false;
         }
-        $('.'+questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $('.'+questions+' input').each(function( key, element) {
+        $(questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $(questions+' input').each(function( key, element) {
             $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -561,19 +561,19 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
     });
 
     $(answer_button).click(function () {
-        $('.'+questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $('.'+questions+' input').val('').css({'color':'#000','font-family':'open_sansregular'});
+        $(questions).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $(questions+' input').val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
             var correct_answer = answers_2_6[question][0];
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
-                $('.'+questions).find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+                $(questions).find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
             }
         }
     });
 }
 /*--Page 2 activity 6--*/
 
-create_multiple_choice ('#questions_2_6','#check_answers_2_6','#reset_answers_2_6','#answers_2_6');
+create_multiple_choice ('.questions_2_6','#check_answers_2_6','#reset_answers_2_6','#answers_2_6');
