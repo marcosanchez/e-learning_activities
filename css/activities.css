@@ -19,6 +19,7 @@
 	box-sizing: border-box;
 }
 .btn_activities div:first-child{
+	padding: 0;
 	width: 77px;
 	margin-right: 5px;
 	position: relative;
@@ -29,7 +30,8 @@
 	background-color: #00B3B8;
 }
 .btn_activities div:first-child span{
-	padding: 9px 10px 4px 10px;
+	line-height: 31px;
+	padding: 0px 10px 4px 10px;
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;
@@ -46,7 +48,8 @@
 	font-size: 14px;
 }
 .btn_activities div:nth-child(2) span{
-	padding: 9px 10px 4px 10px;
+	line-height: 31px;
+	padding: 0px 10px 4px 10px;
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;
@@ -64,7 +67,8 @@
 	font-size: 14px;
 }
 .btn_activities div:last-child span{
-	padding: 9px 10px 4px 10px;
+	line-height: 31px;
+	padding: 0px 10px 4px 10px;
 	display: inline-block;
 	margin-right: 5px;
 	margin: 0 auto;
@@ -133,7 +137,7 @@
 .box{
 	margin: 0 auto;
 	display: inline-block;
-	padding: 3px 7px 3px 7px;
+	padding: 5px 7px 3px 7px;
 	background-color: #DDD;
 	cursor: default;
 	text-align: center;

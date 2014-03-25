@@ -13,7 +13,7 @@ $(".box").each(function(index) {
     }
 });
 $(".box").css('width',Math.max.apply(Math,array_width));
-$(".box").css('height',Math.max.apply(Math,array_height));
+$(".box").css('height',Math.max.apply(Math,array_height)-1);
 
 $("body").droppable({
     drop: function(event, ui) {
