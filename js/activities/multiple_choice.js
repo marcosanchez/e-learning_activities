@@ -512,12 +512,13 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         questions[qu]['answer'] = '';
     }
 
-    $('.questions_2_6').on('change', function () {
+    $('.questions_2_6 input').on('change', function () {
         answered = true;
     });
 
     check_button.click(function () {
-        $('.questions_2_6').each(function( key, element) {
+        $('.questions_2_6 input').each(function( key, element) {
+
             var correct_answer = answers_2_6[$(element).data('question')];
             var user_answer = $(element).val();
 
