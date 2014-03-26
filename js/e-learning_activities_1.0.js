@@ -1,3 +1,81 @@
+jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
+    answer_button.hide();
+    reset_button.hide();
+    check_button.css('position','relative');
+
+    var answered = false;
+    var questions = questions_amount;
+
+    var answers_2_6 = answers_amount;
+
+    for (qu in questions) {
+        questions[qu]['answer'] = '';
+    }
+
+    $(this).find('input').on('change', function () {
+        answered = true;
+    });
+
+    check_button.click(function () {
+        $(this).find('input').each(function( key, element) {
+
+            var correct_answer = answers_2_6[$(element).data('question')];
+            var user_answer = $(element).val();
+
+            questions[$(element).data('question')]['answer'] = user_answer;
+
+            if(user_answer.length > 0) {
+                $(element).next().find('.good_icon').parent().addClass('activity_span');
+                if ($.inArray(user_answer, correct_answer) > -1) {
+                    $(element).next().find('.good_icon').parent().fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.good_icon').fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.wrong_icon').css('display','none');
+                } else {
+                    $(element).next().find('.wrong_icon').parent().fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.wrong_icon').fadeIn('normal').css("display","inline-block");
+                    $(element).next().find('.good_icon').css('display','none');
+                }
+            }
+        });
+
+       if(answered === true){
+            answer_button.fadeIn();
+            check_button.css('display', 'none');
+            reset_button.fadeIn();
+       }
+    });
+
+
+    reset_button.click(function () {
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
+        }
+        $(this).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $(this).find('input').each(function( key, element) {
+            $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
+        });
+
+        answer_button.hide();
+        check_button.fadeIn();
+        $(this).hide();
+    });
+
+    answer_button.click(function () {
+        $(this).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $(this).val('').css({'color':'#000','font-family':'open_sansregular'});
+
+        for (question in questions) {
+            var correct_answer = answers_2_6[question][0];
+            var user_answer = questions[question]['answer'];
+
+            if (user_answer.length > 0) {
+                $(this).find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+            }
+        }
+    });
+}
+
 /*--Multiple choice--*/
 function create_multiple_choice (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
