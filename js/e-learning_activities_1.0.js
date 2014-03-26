@@ -1,5 +1,5 @@
 /*--Multiple choice--*/
-jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
+function create_multiple_choice (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -13,14 +13,12 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
         questions[qu]['answer'] = '';
     }
 
-    $(this).find('input').on('change', function () {
+    questions_html.find('input').on('change', function () {
         answered = true;
     });
 
-    var container = $(this);
-
     check_button.click(function () {
-        container.find('input').each(function( key, element) {
+        questions_html.find('input').each(function( key, element) {
 
             var correct_answer = answers_2_6[$(element).data('question')];
             var user_answer = $(element).val();
@@ -54,8 +52,8 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
         for (qu in questions) {
             questions[qu]['answer'] = false;
         }
-        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        container.find('input').each(function( key, element) {
+        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        questions_html.find('input').each(function( key, element) {
             $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -65,15 +63,15 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
     });
 
     answer_button.click(function () {
-        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $(this).val('').css({'color':'#000','font-family':'open_sansregular'});
+        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        questions_html.val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
             var correct_answer = answers_2_6[question][0];
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
-                container.find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+                questions_html.find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
             }
         }
     });
