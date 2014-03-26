@@ -21,7 +21,4 @@ These are the following activities:
   <li><strong>False and True</strong></li>
   <li><strong>Drag and drop images</strong></li>
   <li><strong>Accordion select</strong></li>
-  <li><strong>Crossword</strong></li>
-  <li><strong>Evaluate big content</strong></li>
-  <li><strong>Concentrate</strong></li>
 </ol>
