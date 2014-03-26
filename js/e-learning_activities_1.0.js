@@ -16,8 +16,10 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
         answered = true;
     });
 
+    var container = $(this);
+
     check_button.click(function () {
-        $(this).find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
 
             var correct_answer = answers_2_6[$(element).data('question')];
             var user_answer = $(element).val();
@@ -51,8 +53,8 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
         for (qu in questions) {
             questions[qu]['answer'] = false;
         }
-        $(this).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $(this).find('input').each(function( key, element) {
+        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        container.find('input').each(function( key, element) {
             $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -62,7 +64,7 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
     });
 
     answer_button.click(function () {
-        $(this).find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
         $(this).val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
@@ -70,7 +72,7 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
-                $(this).find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+                container.find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
             }
         }
     });
