@@ -478,7 +478,7 @@ $("#answers_2_5").click(function () {
 /*--Page 2 activity 5--*/
 
 /*--Page 2 activity 6--*/
-/*function create_multiple_choice (questions,check_button,reset_button,answer_button){
+function create_multiple_choice (questions,check_button,reset_button,answer_button){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -573,7 +573,8 @@ $("#answers_2_5").click(function () {
             }
         }
     });
-}*/
-/*--Page 2 activity 6--*/
+}
 
-//create_multiple_choice ($('.questions_2_6'),$('#check_answers_2_6'),$('#reset_answers_2_6'),$('#answers_2_6'));
+create_multiple_choice ($('.questions_2_6'),$('#check_answers_2_6'),$('#reset_answers_2_6'),$('#answers_2_6'));
+
+/*--Page 2 activity 6--*/
