@@ -90,6 +90,7 @@ function create_select(questions_html,check_button,reset_button,answer_button,qu
 }
 /*--Select--*/
 
+/*--Page 2 activity 1--*/
 create_select (
     $('.questions_3_1'),
     $('#check_answers_3_1'),
@@ -121,6 +122,7 @@ create_select (
     }
 );
 
+/*--Page 2 activity 2--*/
 create_select (
     $('.questions_3_2'),
     $('#check_answers_3_2'),
@@ -152,6 +154,7 @@ create_select (
     }
 );
 
+/*--Page 2 activity 3--*/
 create_select (
     $('.questions_3_3'),
     $('#check_answers_3_3'),

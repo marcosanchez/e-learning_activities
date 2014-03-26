@@ -1,5 +1,5 @@
 /*--Drag and drop--*/
-function create_drag_and_drop(anwers_place,check_button,reset_button,answer_button,questions_amount,answers_amount){
+function create_drag_drop(answers_options,answers_place,check_button,reset_button,answer_button,questions_amount,answers_amount){
     var array_width = new Array();
     var array_height = new Array();
     $(".box").each(function(index) {
@@ -27,23 +27,21 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
     reset_button.hide();
     check_button.css('position','relative');
 
-    $('.answer_options_4_1 .answer_par').each(function( key, element) {
+    answers_options.find('.answer_par').each(function( key, element) {
         $(element).draggable();
     });
 
     var answered_4_1 = false;
 
-    // Introduce questions
     var questions_4_1 = questions_amount;
 
-    // Introduce answers
     var answers_4_1 = answers_amount;
 
     for (qu in questions_4_1) {
         questions_4_1[qu]['answer'] = 0;
     }
 
-    $('.answers_place_4_1 .box').each(function( key, element) {
+    answers_place.find('.box').each(function( key, element) {
         $(element).droppable({
             accept: ".answer_options_4_1 .answer_par",
             drop: function(event, ui) {
@@ -68,7 +66,7 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
     });
 
     check_button.click(function () {
-        $('.answers_place_4_1 .box').each(function( key, element) {
+        answers_place.find('.box').each(function( key, element) {
             var correct_answer = answers_4_1[$(element).data('question')];
             var selected_answer = questions_4_1[$(element).data('question')]['answer'];
 
@@ -91,7 +89,7 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
             check_button.css('display', 'none');
             reset_button.fadeIn();
 
-            $('.answer_options_4_1 .answer_par').each(function( key, element) {
+            answers_options.find('.answer_par').each(function( key, element) {
                 $(element).draggable("disable");
             });
         }
@@ -104,12 +102,12 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
         }
         answers_place.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
-        $('.answer_options_4_1 .answer_par').each(function( key, element) {
+        answers_options.find('.answer_par').each(function( key, element) {
             $(element).css("visibility","visible");
             $(element).draggable("enable");
         });
 
-        $('.answers_place_4_1 .box').each(function( key, element) {
+        answers_place.find('.box').each(function( key, element) {
             $(element).css("background-color","#DDD");
             $(element).html("&nbsp;");
             $(element).droppable("enable");
@@ -124,7 +122,7 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
         for (question in questions_4_1) {
             var correct_answer = answers_4_1[question];
             var user_answer = questions_4_1[question]['answer'];
-            var answer_text = $('.answer_options_4_1').find("[data-option='" + correct_answer + "']").text();
+            var answer_text = answers_options.find("[data-option='" + correct_answer + "']").text();
 
             if (user_answer) {
                 answers_place.find("[data-question='" + question + "']").css({"background-color":"#00B050","color":"#FFF"}).html(answer_text);
@@ -136,7 +134,8 @@ function create_drag_and_drop(anwers_place,check_button,reset_button,answer_butt
 }
 /*--Drag and drop--*/
 
-create_drag_and_drop (
+create_drag_drop (
+    $('.answer_options_4_1'),
     $('.answers_place_4_1'),
     $('#check_answers_4_1'),
     $('#reset_answers_4_1'),
