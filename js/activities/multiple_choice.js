@@ -551,8 +551,8 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         for (qu in questions) {
             questions[qu]['answer'] = false;
         }
-        questions.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $('.questions_2_6').each(function( key, element) {
+        $('.questions_2_6').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $('.questions_2_6 input').each(function( key, element) {
             $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -562,7 +562,7 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
     });
 
     answer_button.click(function () {
-        questions.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        $('.questions_2_6').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
         $('.questions_2_6').val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
@@ -570,7 +570,7 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
-                questions.find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+                $('.questions_2_6').find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
             }
         }
     });
