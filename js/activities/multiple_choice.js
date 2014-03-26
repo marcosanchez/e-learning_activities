@@ -478,7 +478,7 @@ $("#answers_2_5").click(function () {
 /*--Page 2 activity 5--*/
 
 /*--Page 2 activity 6--*/
-function create_multiple_choice (questions,check_button,reset_button,answer_button){
+function create_multiple_choice (questions_html,check_button,reset_button,answer_button){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -512,12 +512,12 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         questions[qu]['answer'] = '';
     }
 
-    $('.questions_2_6 input').on('change', function () {
+    questions_html.find('input').on('change', function () {
         answered = true;
     });
 
     check_button.click(function () {
-        $('.questions_2_6 input').each(function( key, element) {
+        questions_html.find('input').each(function( key, element) {
 
             var correct_answer = answers_2_6[$(element).data('question')];
             var user_answer = $(element).val();
@@ -551,8 +551,8 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
         for (qu in questions) {
             questions[qu]['answer'] = false;
         }
-        $('.questions_2_6').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $('.questions_2_6 input').each(function( key, element) {
+        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        questions_html.find('input').each(function( key, element) {
             $(element).val('').css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -562,15 +562,15 @@ function create_multiple_choice (questions,check_button,reset_button,answer_butt
     });
 
     answer_button.click(function () {
-        $('.questions_2_6').find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        $('.questions_2_6').val('').css({'color':'#000','font-family':'open_sansregular'});
+        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        questions_html.val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
             var correct_answer = answers_2_6[question][0];
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
-                $('.questions_2_6').find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
+                questions_html.find("[data-question='" + question + "']").css({'color':'#00B050','font-family':'open_sansregular'}).val(correct_answer);
             }
         }
     });
