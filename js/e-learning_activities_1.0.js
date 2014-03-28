@@ -81,19 +81,19 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
 /*--Multiple choice--*/
 
 /*--Select--*/
-function create_select(questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
+jQuery.fn.create_select = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
 
-    if(questions_html.find('div').html().length == 1){
-        questions_html.find('div').css({
+    /*if($(this).find('div').html().length == 1){
+        $(this).find('div').css({
             'width': 21,
             'padding': 1
         });
-    }else if(questions_html.find('figure').length){
-        questions_html.find('div').css('padding',0);
-    }
+    }else if($(this).find('figure').length){
+        $(this).find('div').css('padding',0);
+    }*/
 
     var answered_3_1 = false;
 
@@ -101,11 +101,13 @@ function create_select(questions_html,check_button,reset_button,answer_button,qu
 
     var answers_3_1 = answers_amount;
 
+    var container = $(this);
+
     for (qu in questions_3_1) {
         questions_3_1[qu]['answer'] = 0;
     }
 
-    questions_html.on('click', 'div', function () {
+    $(this).on('click', 'div', function () {
         $(this).parent().find('div').not($(this)).css('background', '#DDD').css('color', '#000');
         $(this).css('background', '#AAA').css('color', '#FFF');
 
@@ -116,7 +118,7 @@ function create_select(questions_html,check_button,reset_button,answer_button,qu
     });
 
     check_button.click(function () {
-        questions_html.find('li').each(function( key, element) {
+        container.find('li').each(function( key, element) {
             var correct_answer = answers_3_1[$(element).data('question')];
             var selected_answer = questions_3_1[$(element).data('question')]['answer'];
 
@@ -146,8 +148,8 @@ function create_select(questions_html,check_button,reset_button,answer_button,qu
         for (qu in questions_3_1) {
             questions_3_1[qu]['answer'] = 0;
         }
-        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('div').each(function( key, element) {
+        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        container.find('div').each(function( key, element) {
             $(element).css('background', '#DDD').css('color', '#000');
         });
 
@@ -157,15 +159,15 @@ function create_select(questions_html,check_button,reset_button,answer_button,qu
     });
 
     answer_button.click(function () {
-        questions_html.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('div').css('background', '#DDD').css('color', '#000');
+        container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
+        container.find('div').css('background', '#DDD').css('color', '#000');
 
         for (question in questions_3_1) {
             var correct_answer = answers_3_1[question];
             var user_answer = questions_3_1[question]['answer'];
 
             if (user_answer > 0) {
-                questions_html.find("[data-question='" + question + "']").find("[data-select='" + correct_answer + "']").css('background', '#00BD56').css('color', '#FFF');
+                container.find("[data-question='" + question + "']").find("[data-select='" + correct_answer + "']").css('background', '#00BD56').css('color', '#FFF');
             }
         }
     });
@@ -309,7 +311,7 @@ function create_drag_drop(answers_options,answers_place,check_button,reset_butto
 /*--Drag and drop--*/
 
 /*--Multiple unique answer--*/
-function create_multiple_unique_asnwers (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
+jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -320,11 +322,13 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 
     var answers_5_1 = answers_amount;
 
+    var container = $(this);
+
     for (qu in questions_5_1) {
         questions_5_1[qu]['answer'] = false;
     }
 
-    questions_html.on('click', 'input', function() {
+    $(this).on('click', 'input', function() {
         answered_5_1 = true;
         var selected_option = $(this).data('option');
         var question = questions_5_1[$(this).closest('ol').data('question')];
@@ -334,7 +338,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 
 
     check_button.click(function () {
-        questions_html.find('ol').each(function( key, element) {
+        container.find('ol').each(function( key, element) {
             var correct_answer = answers_5_1[$(element).data('question')];
             var selected_answer = questions_5_1[$(element).data('question')]['answer'];
 
@@ -368,7 +372,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
         }
 
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -380,7 +384,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
     answer_button.click(function () {
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
             $(element).prop("checked", false);
         });
@@ -390,7 +394,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
             var user_answer = questions_5_1[question]['answer'];
             
             if (user_answer) {
-                questions_html.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+                container.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
             }
         }
     });
@@ -398,7 +402,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 /*--Multiple unique answer--*/
 
 /*--Multiples_answers--*/
-function create_multiple_unique_asnwers (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
+jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -409,16 +413,18 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 
     var answers_6_1 = answers_amount;
 
+    var container = $(this);
+
     for (qu in questions_6_1) {
         questions_6_1[qu]['answer'] = false;
     }
 
-    questions_html.on('click', 'input', function () {
+    $(this).on('click', 'input', function () {
         answered_6_1 = true;
     });
 
     check_button.click(function () {
-        questions_html.find('li.question_text').each(function( key, element) {
+        container.find('li.question_text').each(function( key, element) {
             var qstion_id = $(this).closest('li').data('question');
             // Introducing user answers data in check button function.
 
@@ -497,7 +503,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
             questions_6_1[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
         });
         answer_button.hide();
@@ -509,7 +515,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
             $(element).prop("checked", false);
         });
@@ -528,7 +534,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
             if (answered_question) {
                 $.each(correct_answer, function(key, value) {
                     if (value === true) {
-                    questions_html.find("[data-question='" + question + "']").find("[data-option='" + key + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+                    container.find("[data-question='" + question + "']").find("[data-option='" + key + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
                         
                     }
                 });
@@ -539,7 +545,7 @@ function create_multiple_unique_asnwers (questions_html,check_button,reset_butto
 /*--Multiples_answers--*/
 
 /*--False and true--*/
-function create_false_true (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount){
+jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -550,11 +556,13 @@ function create_false_true (questions_html,check_button,reset_button,answer_butt
 
     var answers_7_1 = answers_amount;
 
+    var container = $(this);
+
     for (qu in questions_7_1) {
         questions_7_1[qu]['answer'] = false;
     }
 
-    questions_html.on('click', 'input', function () {
+    $(this).on('click', 'input', function () {
         answered_7_1 = true;
         var selected_option = $(this).data('option');
         var question = questions_7_1[$(this).closest('li').data('question')];
@@ -564,7 +572,7 @@ function create_false_true (questions_html,check_button,reset_button,answer_butt
 
 
     check_button.click(function () {
-        questions_html.find('li').each(function( key, element) {
+        container.find('li').each(function( key, element) {
             var correct_answer = answers_7_1[$(element).data('question')];
             var selected_answer = questions_7_1[$(element).data('question')]['answer']; 
             if (selected_answer) {
@@ -595,7 +603,7 @@ function create_false_true (questions_html,check_button,reset_button,answer_butt
             questions_7_1[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).prop("checked", false).parent().css({'color':'#000','font-family':'open_sansregular'});
         });
 
@@ -608,7 +616,7 @@ function create_false_true (questions_html,check_button,reset_button,answer_butt
     answer_button.click(function () {
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
-        questions_html.find('input').each(function( key, element) {
+        container.find('input').each(function( key, element) {
             $(element).parent().css({'color':'#000','font-family':'open_sansregular'});
             $(element).prop("checked", false);
         });
@@ -618,7 +626,7 @@ function create_false_true (questions_html,check_button,reset_button,answer_butt
             var user_answer = questions_7_1[question]['answer'];
             
             if (user_answer) {
-                questions_html.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
+                container.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
             }
         }
     });
@@ -761,7 +769,7 @@ function create_drag_drop_images(answers_options,answers_place,check_button,rese
 /*--Drag and drop images--*/
 
 /*--Accordion select--*/
-function create_accordion_select (questions_html,check_button,reset_button,answer_button,questions_amount,answers_amount,options_amount){
+jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_button,questions_amount,answers_amount,options_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
@@ -774,17 +782,19 @@ function create_accordion_select (questions_html,check_button,reset_button,answe
 
     var select_options_9_1 = options_amount;
 
+    var container = $(this);
+
     for (qu in questions_9_1) {
         questions_9_1[qu]['answer'] = false;
     }
 
-    questions_html.on('change', 'select', function () {
+    $(this).on('change', 'select', function () {
         answered_9_1 = true;
     });
 
 
     check_button.click(function () {
-        questions_html.find('select').each(function( key, element) {
+        container.find('select').each(function( key, element) {
             var correct_answer = answers_9_1[$(element).data('position')];
             var selected_answer = $(element).find('option:selected').val();
             questions_9_1[$(element).data('position')]['answer'] = selected_answer;
@@ -816,7 +826,7 @@ function create_accordion_select (questions_html,check_button,reset_button,answe
             questions_9_1[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
-        questions_html.find('select').css('color', '#000').removeAttr('disabled').val('');
+        container.find('select').css('color', '#000').removeAttr('disabled').val('');
 
         answer_button.hide();
         check_button.fadeIn();
@@ -832,12 +842,12 @@ function create_accordion_select (questions_html,check_button,reset_button,answe
             var correct_answer = answers_9_1[question];
             
             if (user_answer) {
-                questions_html.find("[data-position='" + question + "']").val(correct_answer).css('color', '#00B050');
+                container.find("[data-position='" + question + "']").val(correct_answer).css('color', '#00B050');
                 
             }
         }
 
-        questions_html.find('select').each(function( key, element) {
+        container.find('select').each(function( key, element) {
             $(element).attr('disabled', 'true');
         });
     });
