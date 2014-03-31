@@ -86,14 +86,16 @@ jQuery.fn.create_select = function(check_button,reset_button,answer_button,quest
     reset_button.hide();
     check_button.css('position','relative');
 
-    /*if($(this).find('div').html().length == 1){
-        $(this).find('div').css({
-            'width': 21,
-            'padding': 1
-        });
-    }else if($(this).find('figure').length){
-        $(this).find('div').css('padding',0);
-    }*/
+    $("[data-select]").each(function(index) {
+        if($(this).html().length == 1){
+            $(this).css({
+                'width': 21,
+                'padding': 1
+            });
+        }else if($(this).find('figure').length){
+            $(this).css('padding',0);
+        }
+    });
 
     var answered_3_1 = false;
 
