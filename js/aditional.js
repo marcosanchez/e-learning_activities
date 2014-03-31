@@ -208,6 +208,32 @@ $('.questions_3_3').create_select (
     }
 );
 
+/*--Page 4 activity 1--*/
+$('.answer_options_4_1').create_drag_drop(
+    $('.answers_place_4_1'),
+    $('#check_answers_4_1'),
+    $('#reset_answers_4_1'),
+    $('#answers_4_1'),
+    {
+        'question_4_1_1' : {},
+        'question_4_1_2' : {},
+        'question_4_1_3' : {},
+        'question_4_1_4' : {},
+        'question_4_1_5' : {},
+        'question_4_1_6' : {},
+        'question_4_1_7' : {}
+    },
+    {
+        'question_4_1_1': '2',
+        'question_4_1_2': '1',
+        'question_4_1_3': '3',
+        'question_4_1_4': '4',
+        'question_4_1_5': '5',
+        'question_4_1_6': '6',
+        'question_4_1_7': '7'
+    }
+);
+
 /*--Page 5 activity 1--*/
 $('.questions_5_1').create_multiple_unique_asnwers (
     $('#check_answers_5_1'),
@@ -258,6 +284,32 @@ $('.questions_7_1').create_false_true (
         'question_7_1_2': 'option_2',
         'question_7_1_3': 'option_1',
         'question_7_1_4': 'option_1'
+    }
+);
+
+/*--Page 8 activity 1--*/
+$('.answer_options_8_1').create_drag_drop_images(
+    $('.answers_place_8_1'),
+    $('#check_answers_8_1'),
+    $('#reset_answers_8_1'),
+    $('#answers_8_1'),
+    {
+        'question_8_1_1' : {},
+        'question_8_1_2' : {},
+        'question_8_1_3' : {},
+        'question_8_1_4' : {},
+        'question_8_1_5' : {},
+        'question_8_1_6' : {},
+        'question_8_1_7' : {}
+    },
+    {
+        'question_8_1_1': '7',
+        'question_8_1_2': '2',
+        'question_8_1_3': '3',
+        'question_8_1_4': '4',
+        'question_8_1_5': '5',
+        'question_8_1_6': '6',
+        'question_8_1_7': '1'
     }
 );
 
