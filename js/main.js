@@ -341,14 +341,5 @@ $('.questions_9_1').create_accordion_select (
         'question_9_5': 4,
         'question_9_6': 2,
         'question_9_7': 3,
-    },
-    {
-        1: 'récord',
-        2: 'ping-pong',
-        3: 'jardín',
-        4: 'manos',
-        5: 'sol',
-        6: 'puertas',
-        7: 'mes'
     }
 );

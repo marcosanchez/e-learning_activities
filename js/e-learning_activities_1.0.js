@@ -7,7 +7,7 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
     var answered = false;
     var questions = questions_amount;
 
-    var answers_2_6 = answers_amount;
+    var answers = answers_amount;
 
     for (qu in questions) {
         questions[qu]['answer'] = '';
@@ -22,7 +22,7 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
     check_button.click(function () {
         container.find('input').each(function( key, element) {
 
-            var correct_answer = answers_2_6[$(element).data('question')];
+            var correct_answer = answers[$(element).data('question')];
             var user_answer = $(element).val();
 
             questions[$(element).data('question')]['answer'] = user_answer;
@@ -69,7 +69,7 @@ jQuery.fn.create_multiple_choice = function(check_button,reset_button,answer_but
         $(this).val('').css({'color':'#000','font-family':'open_sansregular'});
 
         for (question in questions) {
-            var correct_answer = answers_2_6[question][0];
+            var correct_answer = answers[question][0];
             var user_answer = questions[question]['answer'];
 
             if (user_answer.length > 0) {
@@ -97,32 +97,32 @@ jQuery.fn.create_select = function(check_button,reset_button,answer_button,quest
         }
     });
 
-    var answered_3_1 = false;
+    var answered = false;
 
-    var questions_3_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_3_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_3_1) {
-        questions_3_1[qu]['answer'] = 0;
+    for (qu in questions) {
+        questions[qu]['answer'] = 0;
     }
 
     $(this).on('click', 'div', function () {
         $(this).parent().find('div').not($(this)).css('background', '#DDD').css('color', '#000');
         $(this).css('background', '#AAA').css('color', '#FFF');
 
-        answered_3_1 = true;
+        answered = true;
         var selected_option = $(this).data('select');
-        var question = questions_3_1[$(this).closest('li').data('question')];
+        var question = questions[$(this).closest('li').data('question')];
         question['answer'] = selected_option;
     });
 
     check_button.click(function () {
         container.find('li').each(function( key, element) {
-            var correct_answer = answers_3_1[$(element).data('question')];
-            var selected_answer = questions_3_1[$(element).data('question')]['answer'];
+            var correct_answer = answers[$(element).data('question')];
+            var selected_answer = questions[$(element).data('question')]['answer'];
 
             if (selected_answer) {
                 $(element).find('.good_icon').parent().addClass('activity_span');
@@ -138,7 +138,7 @@ jQuery.fn.create_select = function(check_button,reset_button,answer_button,quest
             }
         });
 
-        if(answered_3_1 === true){
+        if(answered === true){
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -146,9 +146,9 @@ jQuery.fn.create_select = function(check_button,reset_button,answer_button,quest
     });
 
     reset_button.click(function () {
-        answered_3_1 = false;
-        for (qu in questions_3_1) {
-            questions_3_1[qu]['answer'] = 0;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = 0;
         }
         container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
         container.find('div').each(function( key, element) {
@@ -164,9 +164,9 @@ jQuery.fn.create_select = function(check_button,reset_button,answer_button,quest
         container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
         container.find('div').css('background', '#DDD').css('color', '#000');
 
-        for (question in questions_3_1) {
-            var correct_answer = answers_3_1[question];
-            var user_answer = questions_3_1[question]['answer'];
+        for (question in questions) {
+            var correct_answer = answers[question];
+            var user_answer = questions[question]['answer'];
 
             if (user_answer > 0) {
                 container.find("[data-question='" + question + "']").find("[data-select='" + correct_answer + "']").css('background', '#00BD56').css('color', '#FFF');
@@ -209,16 +209,16 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
         $(element).draggable();
     });
 
-    var answered_4_1 = false;
+    var answered = false;
 
-    var questions_4_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_4_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_4_1) {
-        questions_4_1[qu]['answer'] = 0;
+    for (qu in questions) {
+        questions[qu]['answer'] = 0;
     }
 
     $(this).find('.box').each(function( key, element) {
@@ -235,11 +235,11 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
                 $(this).droppable( "disable");
                 $(ui.draggable).draggable("disable");
 
-                answered_4_1 = true;
-                var correct_answer = answers_4_1[$(this).droppable().data('question')];
+                answered = true;
+                var correct_answer = answers[$(this).droppable().data('question')];
                 var selected_answer = $(ui.draggable).data('option');
 
-                var question = questions_4_1[$(this).droppable().data('question')];
+                var question = questions[$(this).droppable().data('question')];
                 question['answer'] = selected_answer;
             }
         });
@@ -247,8 +247,8 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
 
     check_button.click(function () {
         container.find('.box').each(function( key, element) {
-            var correct_answer = answers_4_1[$(element).data('question')];
-            var selected_answer = questions_4_1[$(element).data('question')]['answer'];
+            var correct_answer = answers[$(element).data('question')];
+            var selected_answer = questions[$(element).data('question')]['answer'];
 
             if (selected_answer) {
                 $(element).parent().find('.good_icon').parent().addClass('activity_span');
@@ -264,7 +264,7 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
             }
         });
 
-        if(answered_4_1){
+        if(answered){
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -276,9 +276,9 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
     });
 
     reset_button.click(function () {
-        answered_4_1 = false;
-        for (qu in questions_4_1) {
-            questions_4_1[qu]['answer'] = 0;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = 0;
         }
         container.find('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
@@ -299,9 +299,9 @@ jQuery.fn.create_drag_drop = function(answers_place,check_button,reset_button,an
     });
 
     answer_button.click(function () {
-        for (question in questions_4_1) {
-            var correct_answer = answers_4_1[question];
-            var user_answer = questions_4_1[question]['answer'];
+        for (question in questions) {
+            var correct_answer = answers[question];
+            var user_answer = questions[question]['answer'];
             var answer_text = answers_place.find("[data-option='" + correct_answer + "']").text();
 
             if (user_answer) {
@@ -320,22 +320,22 @@ jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,an
     reset_button.hide();
     check_button.css('position','relative');
 
-    var answered_5_1 = false;
+    var answered = false;
 
-    var questions_5_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_5_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_5_1) {
-        questions_5_1[qu]['answer'] = false;
+    for (qu in questions) {
+        questions[qu]['answer'] = false;
     }
 
     $(this).on('click', 'input', function() {
-        answered_5_1 = true;
+        answered = true;
         var selected_option = $(this).data('option');
-        var question = questions_5_1[$(this).closest('ol').data('question')];
+        var question = questions[$(this).closest('ol').data('question')];
 
         question['answer'] = selected_option;
     });
@@ -343,8 +343,8 @@ jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,an
 
     check_button.click(function () {
         container.find('ol').each(function( key, element) {
-            var correct_answer = answers_5_1[$(element).data('question')];
-            var selected_answer = questions_5_1[$(element).data('question')]['answer'];
+            var correct_answer = answers[$(element).data('question')];
+            var selected_answer = questions[$(element).data('question')]['answer'];
 
             if (selected_answer) {
                 $(element).parent().find('.good_icon').parent().addClass('activity_span');
@@ -361,7 +361,7 @@ jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,an
             }
         });
 
-        if (answered_5_1 === true) {
+        if (answered === true) {
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -370,9 +370,9 @@ jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,an
     });
 
     reset_button.click(function () {
-        answered_5_1 = false;
-        for (qu in questions_5_1) {
-            questions_5_1[qu]['answer'] = false;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
         }
 
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
@@ -393,9 +393,9 @@ jQuery.fn.create_multiple_unique_asnwers = function(check_button,reset_button,an
             $(element).prop("checked", false);
         });
 
-        for (question in questions_5_1) {
-            var correct_answer = answers_5_1[question];
-            var user_answer = questions_5_1[question]['answer'];
+        for (question in questions) {
+            var correct_answer = answers[question];
+            var user_answer = questions[question]['answer'];
             
             if (user_answer) {
                 container.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
@@ -411,46 +411,45 @@ jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_b
     reset_button.hide();
     check_button.css('position','relative');
 
-    var answered_6_1 = false;
+    var answered = false;
 
-    var questions_6_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_6_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_6_1) {
-        questions_6_1[qu]['answer'] = false;
+    for (qu in questions) {
+        questions[qu]['answer'] = false;
     }
 
     $(this).on('click', 'input', function () {
-        answered_6_1 = true;
+        answered = true;
     });
 
     check_button.click(function () {
         container.find('li.question_text').each(function( key, element) {
             var qstion_id = $(this).closest('li').data('question');
-            // Introducing user answers data in check button function.
 
             var user_answer = {};
-            for (qu_id in answers_6_1) {
+            for (qu_id in answers) {
                 var total = 0
 
-                for (op in answers_6_1[qu_id]) {
+                for (op in answers[qu_id]) {
                     total = total + 1;
                     user_answer[op] = false;
                 }
             }
 
-            var question = questions_6_1[qstion_id];
+            var question = questions[qstion_id];
             $(element).find('input:checked').each(function( key, option) {
                 var checked_option = $(this).data('option');
                 user_answer[checked_option] = true;
             });
 
-            questions_6_1[qstion_id]['answer'] = user_answer;
-            var correct_answer = answers_6_1[qstion_id];
-            var answer = questions_6_1[qstion_id]['answer'];
+            questions[qstion_id]['answer'] = user_answer;
+            var correct_answer = answers[qstion_id];
+            var answer = questions[qstion_id]['answer'];
 
             var answered_question = false;
 
@@ -461,13 +460,13 @@ jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_b
             }
 
             if (answered_question) {
-                var answer_options = answers_6_1[qstion_id];
+                var answer_options = answers[qstion_id];
                 var dict_length = Object.keys(answer_options).length;
 
                 var correct_answers_dict = {}
                 for (var i = 1, l = dict_length ; i <= l; i++)  {
 
-                    if (user_answer['option_' + i] === answers_6_1[qstion_id]['option_' + i]) {
+                    if (user_answer['option_' + i] === answers[qstion_id]['option_' + i]) {
                         correct_answers_dict['correct_' + i] = true;
                     } else {
                         correct_answers_dict['correct_' + i] = false;
@@ -494,7 +493,7 @@ jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_b
             }
         });
 
-        if (answered_6_1 === true) {
+        if (answered === true) {
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();   
@@ -502,9 +501,9 @@ jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_b
     });
 
     reset_button.click(function () {
-        answered_6_1 = false;
-        for (qu in questions_6_1) {
-            questions_6_1[qu]['answer'] = false;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
         container.find('input').each(function( key, element) {
@@ -524,9 +523,9 @@ jQuery.fn.create_multiples_asnwers = function(check_button,reset_button,answer_b
             $(element).prop("checked", false);
         });
 
-        for (question in questions_6_1) {
-            var user_answer = questions_6_1[question]['answer'];
-            var correct_answer = answers_6_1[question];
+        for (question in questions) {
+            var user_answer = questions[question]['answer'];
+            var correct_answer = answers[question];
             var answered_question = false;
 
             for (value in user_answer) {
@@ -554,22 +553,22 @@ jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,q
     reset_button.hide();
     check_button.css('position','relative');
 
-    var answered_7_1 = false;
+    var answered = false;
 
-    var questions_7_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_7_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_7_1) {
-        questions_7_1[qu]['answer'] = false;
+    for (qu in questions) {
+        questions[qu]['answer'] = false;
     }
 
     $(this).on('click', 'input', function () {
-        answered_7_1 = true;
+        answered = true;
         var selected_option = $(this).data('option');
-        var question = questions_7_1[$(this).closest('li').data('question')];
+        var question = questions[$(this).closest('li').data('question')];
 
         question['answer'] = selected_option;
     });
@@ -577,8 +576,8 @@ jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,q
 
     check_button.click(function () {
         container.find('li').each(function( key, element) {
-            var correct_answer = answers_7_1[$(element).data('question')];
-            var selected_answer = questions_7_1[$(element).data('question')]['answer']; 
+            var correct_answer = answers[$(element).data('question')];
+            var selected_answer = questions[$(element).data('question')]['answer']; 
             if (selected_answer) {
                 $(element).parent().find('.good_icon').parent().addClass('activity_span');
                 if (correct_answer === selected_answer) {
@@ -593,7 +592,7 @@ jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,q
             }
         });
 
-        if (answered_7_1 === true) {
+        if (answered === true) {
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -602,9 +601,9 @@ jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,q
 
 
     reset_button.click(function () {
-        answered_7_1 = false;
-        for (qu in questions_7_1) {
-            questions_7_1[qu]['answer'] = false;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
         container.find('input').each(function( key, element) {
@@ -625,9 +624,9 @@ jQuery.fn.create_false_true = function(check_button,reset_button,answer_button,q
             $(element).prop("checked", false);
         });
 
-        for (question in questions_7_1) {
-            var correct_answer = answers_7_1[question];
-            var user_answer = questions_7_1[question]['answer'];
+        for (question in questions) {
+            var correct_answer = answers[question];
+            var user_answer = questions[question]['answer'];
             
             if (user_answer) {
                 container.find("[data-question='" + question + "']").find("[data-option='" + correct_answer + "']").prop("checked", true).parent().css({'color':'#00B050','font-family':'open_sanssemibold'});
@@ -668,16 +667,16 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
         $(element).draggable();
     });
 
-    var answered_8_1 = false;
+    var answered = false;
 
-    var questions_8_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_8_1 = answers_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_8_1) {
-        questions_8_1[qu]['answer'] = 0;
+    for (qu in questions) {
+        questions[qu]['answer'] = 0;
     }
 
     $(this).find('.box_img').each(function( key, element) {
@@ -694,11 +693,11 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
                 $(this).droppable( "disable");
                 $(ui.draggable).draggable("disable");
 
-                answered_8_1 = true;
-                var correct_answer = answers_8_1[$(this).droppable().data('question')];
+                answered = true;
+                var correct_answer = answers[$(this).droppable().data('question')];
                 var selected_answer = $(ui.draggable).data('option');
 
-                var question = questions_8_1[$(this).droppable().data('question')];
+                var question = questions[$(this).droppable().data('question')];
                 question['answer'] = selected_answer;
             }
         });
@@ -706,8 +705,8 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
 
     check_button.click(function () {
         container.find('.box_img').each(function( key, element) {
-            var correct_answer = answers_8_1[$(element).data('question')];
-            var selected_answer = questions_8_1[$(element).data('question')]['answer'];
+            var correct_answer = answers[$(element).data('question')];
+            var selected_answer = questions[$(element).data('question')]['answer'];
 
             if (selected_answer) {
                 $(element).parent().find('.good_icon').parent().addClass('activity_span');
@@ -723,7 +722,7 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
             }
         });
 
-        if(answered_8_1){
+        if(answered){
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -735,9 +734,9 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
     });
 
     reset_button.click(function () {
-        answered_8_1 = false;
-        for (qu in questions_8_1) {
-            questions_8_1[qu]['answer'] = 0;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = 0;
         }
         container.parent().find('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
@@ -759,9 +758,9 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
     });
 
     answer_button.click(function () {
-        for (question in questions_8_1) {
-            var correct_answer = answers_8_1[question];
-            var user_answer = questions_8_1[question]['answer'];
+        for (question in questions) {
+            var correct_answer = answers[question];
+            var user_answer = questions[question]['answer'];
             var answer_img = answers_place.find("[data-option='" + correct_answer + "']").html();
 
             if (user_answer) {
@@ -775,35 +774,33 @@ jQuery.fn.create_drag_drop_images = function(answers_place,check_button,reset_bu
 /*--Drag and drop images--*/
 
 /*--Accordion select--*/
-jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_button,questions_amount,answers_amount,options_amount){
+jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_button,questions_amount,answers_amount){
     answer_button.hide();
     reset_button.hide();
     check_button.css('position','relative');
 
-    var answered_9_1 = false;
+    var answered = false;
 
-    var questions_9_1 = questions_amount;
+    var questions = questions_amount;
 
-    var answers_9_1 = answers_amount;
-
-    var select_options_9_1 = options_amount;
+    var answers = answers_amount;
 
     var container = $(this);
 
-    for (qu in questions_9_1) {
-        questions_9_1[qu]['answer'] = false;
+    for (qu in questions) {
+        questions[qu]['answer'] = false;
     }
 
     $(this).on('change', 'select', function () {
-        answered_9_1 = true;
+        answered = true;
     });
 
 
     check_button.click(function () {
         container.find('select').each(function( key, element) {
-            var correct_answer = answers_9_1[$(element).data('position')];
+            var correct_answer = answers[$(element).data('position')];
             var selected_answer = $(element).find('option:selected').val();
-            questions_9_1[$(element).data('position')]['answer'] = selected_answer;
+            questions[$(element).data('position')]['answer'] = selected_answer;
 
             if (selected_answer) {
                 $(element).next().find('.good_icon').parent().addClass('activity_span');
@@ -819,7 +816,7 @@ jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_bu
             }
         });
 
-        if (answered_9_1 === true) {
+        if (answered === true) {
             answer_button.fadeIn();
             check_button.css('display', 'none');
             reset_button.fadeIn();
@@ -827,9 +824,9 @@ jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_bu
     });
 
     reset_button.click(function () {
-        answered_9_1 = false;
-        for (qu in questions_9_1) {
-            questions_9_1[qu]['answer'] = false;
+        answered = false;
+        for (qu in questions) {
+            questions[qu]['answer'] = false;
         }
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
         container.find('select').css('color', '#000').removeAttr('disabled').val('');
@@ -843,9 +840,9 @@ jQuery.fn.create_accordion_select = function(check_button,reset_button,answer_bu
     answer_button.click(function () {
         $('.good_icon, .wrong_icon').parent().fadeOut("normal");
 
-        for (question in questions_9_1) {
-            var user_answer = questions_9_1[question]['answer'];
-            var correct_answer = answers_9_1[question];
+        for (question in questions) {
+            var user_answer = questions[question]['answer'];
+            var correct_answer = answers[question];
             
             if (user_answer) {
                 container.find("[data-position='" + question + "']").val(correct_answer).css('color', '#00B050');
